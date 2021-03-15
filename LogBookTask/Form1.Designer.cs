@@ -46,41 +46,41 @@ namespace LogBookTask
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SaveBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.UserPanel = new System.Windows.Forms.Panel();
-            this.WriteCommentBtn = new System.Windows.Forms.PictureBox();
-            this.ClassWorkCmBx = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.AssignmentCmBx = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.RecordPanel = new System.Windows.Forms.Panel();
-            this.PermittedRdBtn = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.AttendedRdBtn = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.NotAttendedRdBtn = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.LastLoginDateLbl = new System.Windows.Forms.Label();
-            this.UserImagePcBx = new System.Windows.Forms.PictureBox();
-            this.UserFullnameLbl = new System.Windows.Forms.Label();
+            this.CrystallsPanel = new System.Windows.Forms.Panel();
+            this.ClearCrystallsBtn0 = new System.Windows.Forms.PictureBox();
+            this.ThreeCrystallBtn0 = new System.Windows.Forms.PictureBox();
+            this.TwoCrystallBtn0 = new System.Windows.Forms.PictureBox();
+            this.OneCrystallBtn0 = new System.Windows.Forms.PictureBox();
+            this.UserPanel0 = new System.Windows.Forms.Panel();
+            this.WriteCommentBtn0 = new System.Windows.Forms.PictureBox();
+            this.ClassWorkCmBx0 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.AssignmentCmBx0 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.RecordPanel0 = new System.Windows.Forms.Panel();
+            this.PermittedRdBtn0 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.AttendedRdBtn0 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.NotAttendedRdBtn0 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.LastLoginDateLbl0 = new System.Windows.Forms.Label();
+            this.UserImagePcBx0 = new System.Windows.Forms.PictureBox();
+            this.UserFullnameLbl0 = new System.Windows.Forms.Label();
             this.NoLbl = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.StudentSeperatorPnl0 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.LessonSubjectTxtBx = new Guna.UI2.WinForms.Guna2TextBox();
             this.SaveLessonSubjectBtn = new Guna.UI2.WinForms.Guna2Button();
             this.TeacherCheckPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.UserPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WriteCommentBtn)).BeginInit();
-            this.RecordPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserImagePcBx)).BeginInit();
+            this.CrystallsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClearCrystallsBtn0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThreeCrystallBtn0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TwoCrystallBtn0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OneCrystallBtn0)).BeginInit();
+            this.UserPanel0.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WriteCommentBtn0)).BeginInit();
+            this.RecordPanel0.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImagePcBx0)).BeginInit();
             this.SuspendLayout();
             // 
             // TeacherCheckPanel
@@ -329,105 +329,107 @@ namespace LogBookTask
             this.SaveBtn.TabIndex = 5;
             this.SaveBtn.Text = "Save";
             // 
-            // panel4
+            // CrystallsPanel
             // 
-            this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(860, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(185, 48);
-            this.panel4.TabIndex = 6;
+            this.CrystallsPanel.Controls.Add(this.ClearCrystallsBtn0);
+            this.CrystallsPanel.Controls.Add(this.ThreeCrystallBtn0);
+            this.CrystallsPanel.Controls.Add(this.TwoCrystallBtn0);
+            this.CrystallsPanel.Controls.Add(this.OneCrystallBtn0);
+            this.CrystallsPanel.Location = new System.Drawing.Point(860, 2);
+            this.CrystallsPanel.Name = "CrystallsPanel";
+            this.CrystallsPanel.Size = new System.Drawing.Size(185, 48);
+            this.CrystallsPanel.TabIndex = 6;
             // 
-            // pictureBox5
+            // ClearCrystallsBtn0
             // 
-            this.pictureBox5.Image = global::LogBookTask.Properties.Resources.xImage;
-            this.pictureBox5.Location = new System.Drawing.Point(132, 4);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(44, 40);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 10;
-            this.pictureBox5.TabStop = false;
+            this.ClearCrystallsBtn0.Image = global::LogBookTask.Properties.Resources.xImage;
+            this.ClearCrystallsBtn0.Location = new System.Drawing.Point(132, 4);
+            this.ClearCrystallsBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ClearCrystallsBtn0.Name = "ClearCrystallsBtn0";
+            this.ClearCrystallsBtn0.Size = new System.Drawing.Size(44, 40);
+            this.ClearCrystallsBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClearCrystallsBtn0.TabIndex = 10;
+            this.ClearCrystallsBtn0.TabStop = false;
             // 
-            // pictureBox4
+            // ThreeCrystallBtn0
             // 
-            this.pictureBox4.Image = global::LogBookTask.Properties.Resources.crystalImage;
-            this.pictureBox4.Location = new System.Drawing.Point(88, 4);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(44, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
+            this.ThreeCrystallBtn0.Image = global::LogBookTask.Properties.Resources.crystalImage;
+            this.ThreeCrystallBtn0.Location = new System.Drawing.Point(88, 4);
+            this.ThreeCrystallBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ThreeCrystallBtn0.Name = "ThreeCrystallBtn0";
+            this.ThreeCrystallBtn0.Size = new System.Drawing.Size(44, 40);
+            this.ThreeCrystallBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ThreeCrystallBtn0.TabIndex = 9;
+            this.ThreeCrystallBtn0.TabStop = false;
             // 
-            // pictureBox3
+            // TwoCrystallBtn0
             // 
-            this.pictureBox3.Image = global::LogBookTask.Properties.Resources.crystalImage;
-            this.pictureBox3.Location = new System.Drawing.Point(44, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
+            this.TwoCrystallBtn0.Image = global::LogBookTask.Properties.Resources.crystalImage;
+            this.TwoCrystallBtn0.Location = new System.Drawing.Point(44, 4);
+            this.TwoCrystallBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TwoCrystallBtn0.Name = "TwoCrystallBtn0";
+            this.TwoCrystallBtn0.Size = new System.Drawing.Size(44, 40);
+            this.TwoCrystallBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TwoCrystallBtn0.TabIndex = 8;
+            this.TwoCrystallBtn0.TabStop = false;
             // 
-            // pictureBox2
+            // OneCrystallBtn0
             // 
-            this.pictureBox2.Image = global::LogBookTask.Properties.Resources.crystalImage;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.OneCrystallBtn0.Image = global::LogBookTask.Properties.Resources.crystalImage;
+            this.OneCrystallBtn0.Location = new System.Drawing.Point(0, 4);
+            this.OneCrystallBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.OneCrystallBtn0.Name = "OneCrystallBtn0";
+            this.OneCrystallBtn0.Size = new System.Drawing.Size(44, 40);
+            this.OneCrystallBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.OneCrystallBtn0.TabIndex = 7;
+            this.OneCrystallBtn0.TabStop = false;
             // 
-            // UserPanel
+            // UserPanel0
             // 
-            this.UserPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.UserPanel0.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.UserPanel.Controls.Add(this.WriteCommentBtn);
-            this.UserPanel.Controls.Add(this.ClassWorkCmBx);
-            this.UserPanel.Controls.Add(this.AssignmentCmBx);
-            this.UserPanel.Controls.Add(this.RecordPanel);
-            this.UserPanel.Controls.Add(this.LastLoginDateLbl);
-            this.UserPanel.Controls.Add(this.UserImagePcBx);
-            this.UserPanel.Controls.Add(this.UserFullnameLbl);
-            this.UserPanel.Controls.Add(this.NoLbl);
-            this.UserPanel.Controls.Add(this.panel4);
-            this.UserPanel.Location = new System.Drawing.Point(0, 145);
-            this.UserPanel.Name = "UserPanel";
-            this.UserPanel.Size = new System.Drawing.Size(1253, 55);
-            this.UserPanel.TabIndex = 7;
+            this.UserPanel0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.UserPanel0.Controls.Add(this.WriteCommentBtn0);
+            this.UserPanel0.Controls.Add(this.ClassWorkCmBx0);
+            this.UserPanel0.Controls.Add(this.AssignmentCmBx0);
+            this.UserPanel0.Controls.Add(this.RecordPanel0);
+            this.UserPanel0.Controls.Add(this.LastLoginDateLbl0);
+            this.UserPanel0.Controls.Add(this.UserImagePcBx0);
+            this.UserPanel0.Controls.Add(this.UserFullnameLbl0);
+            this.UserPanel0.Controls.Add(this.NoLbl);
+            this.UserPanel0.Controls.Add(this.CrystallsPanel);
+            this.UserPanel0.Controls.Add(this.StudentSeperatorPnl0);
+            this.UserPanel0.Location = new System.Drawing.Point(0, 144);
+            this.UserPanel0.Name = "UserPanel0";
+            this.UserPanel0.Size = new System.Drawing.Size(1253, 55);
+            this.UserPanel0.TabIndex = 7;
+            this.UserPanel0.Visible = false;
             // 
-            // WriteCommentBtn
+            // WriteCommentBtn0
             // 
-            this.WriteCommentBtn.Image = global::LogBookTask.Properties.Resources.feedbackImage;
-            this.WriteCommentBtn.Location = new System.Drawing.Point(1122, 6);
-            this.WriteCommentBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.WriteCommentBtn.Name = "WriteCommentBtn";
-            this.WriteCommentBtn.Size = new System.Drawing.Size(44, 40);
-            this.WriteCommentBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.WriteCommentBtn.TabIndex = 11;
-            this.WriteCommentBtn.TabStop = false;
+            this.WriteCommentBtn0.Image = global::LogBookTask.Properties.Resources.feedbackImage;
+            this.WriteCommentBtn0.Location = new System.Drawing.Point(1122, 7);
+            this.WriteCommentBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.WriteCommentBtn0.Name = "WriteCommentBtn0";
+            this.WriteCommentBtn0.Size = new System.Drawing.Size(44, 40);
+            this.WriteCommentBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.WriteCommentBtn0.TabIndex = 11;
+            this.WriteCommentBtn0.TabStop = false;
             // 
-            // ClassWorkCmBx
+            // ClassWorkCmBx0
             // 
-            this.ClassWorkCmBx.BackColor = System.Drawing.Color.Transparent;
-            this.ClassWorkCmBx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(255)))), ((int)(((byte)(31)))));
-            this.ClassWorkCmBx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ClassWorkCmBx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ClassWorkCmBx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ClassWorkCmBx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ClassWorkCmBx.FocusedState.Parent = this.ClassWorkCmBx;
-            this.ClassWorkCmBx.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ClassWorkCmBx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
-            this.ClassWorkCmBx.HoverState.Parent = this.ClassWorkCmBx;
-            this.ClassWorkCmBx.ItemHeight = 25;
-            this.ClassWorkCmBx.Items.AddRange(new object[] {
+            this.ClassWorkCmBx0.BackColor = System.Drawing.Color.Transparent;
+            this.ClassWorkCmBx0.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(255)))), ((int)(((byte)(31)))));
+            this.ClassWorkCmBx0.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ClassWorkCmBx0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ClassWorkCmBx0.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ClassWorkCmBx0.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ClassWorkCmBx0.FocusedState.Parent = this.ClassWorkCmBx0;
+            this.ClassWorkCmBx0.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ClassWorkCmBx0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
+            this.ClassWorkCmBx0.HoverState.Parent = this.ClassWorkCmBx0;
+            this.ClassWorkCmBx0.ItemHeight = 25;
+            this.ClassWorkCmBx0.Items.AddRange(new object[] {
             "-",
             "12",
             "11",
@@ -441,27 +443,27 @@ namespace LogBookTask
             "3",
             "2",
             "1"});
-            this.ClassWorkCmBx.ItemsAppearance.Parent = this.ClassWorkCmBx;
-            this.ClassWorkCmBx.Location = new System.Drawing.Point(739, 9);
-            this.ClassWorkCmBx.Name = "ClassWorkCmBx";
-            this.ClassWorkCmBx.ShadowDecoration.Parent = this.ClassWorkCmBx;
-            this.ClassWorkCmBx.Size = new System.Drawing.Size(89, 31);
-            this.ClassWorkCmBx.TabIndex = 13;
+            this.ClassWorkCmBx0.ItemsAppearance.Parent = this.ClassWorkCmBx0;
+            this.ClassWorkCmBx0.Location = new System.Drawing.Point(739, 9);
+            this.ClassWorkCmBx0.Name = "ClassWorkCmBx0";
+            this.ClassWorkCmBx0.ShadowDecoration.Parent = this.ClassWorkCmBx0;
+            this.ClassWorkCmBx0.Size = new System.Drawing.Size(89, 31);
+            this.ClassWorkCmBx0.TabIndex = 13;
             // 
-            // AssignmentCmBx
+            // AssignmentCmBx0
             // 
-            this.AssignmentCmBx.BackColor = System.Drawing.Color.Transparent;
-            this.AssignmentCmBx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(245)))));
-            this.AssignmentCmBx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.AssignmentCmBx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AssignmentCmBx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AssignmentCmBx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AssignmentCmBx.FocusedState.Parent = this.AssignmentCmBx;
-            this.AssignmentCmBx.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.AssignmentCmBx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(245)))));
-            this.AssignmentCmBx.HoverState.Parent = this.AssignmentCmBx;
-            this.AssignmentCmBx.ItemHeight = 25;
-            this.AssignmentCmBx.Items.AddRange(new object[] {
+            this.AssignmentCmBx0.BackColor = System.Drawing.Color.Transparent;
+            this.AssignmentCmBx0.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(245)))));
+            this.AssignmentCmBx0.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.AssignmentCmBx0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AssignmentCmBx0.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.AssignmentCmBx0.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.AssignmentCmBx0.FocusedState.Parent = this.AssignmentCmBx0;
+            this.AssignmentCmBx0.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.AssignmentCmBx0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(245)))));
+            this.AssignmentCmBx0.HoverState.Parent = this.AssignmentCmBx0;
+            this.AssignmentCmBx0.ItemHeight = 25;
+            this.AssignmentCmBx0.Items.AddRange(new object[] {
             "-",
             "12",
             "11",
@@ -475,114 +477,114 @@ namespace LogBookTask
             "3",
             "2",
             "1"});
-            this.AssignmentCmBx.ItemsAppearance.Parent = this.AssignmentCmBx;
-            this.AssignmentCmBx.Location = new System.Drawing.Point(613, 9);
-            this.AssignmentCmBx.Name = "AssignmentCmBx";
-            this.AssignmentCmBx.ShadowDecoration.Parent = this.AssignmentCmBx;
-            this.AssignmentCmBx.Size = new System.Drawing.Size(89, 31);
-            this.AssignmentCmBx.TabIndex = 9;
+            this.AssignmentCmBx0.ItemsAppearance.Parent = this.AssignmentCmBx0;
+            this.AssignmentCmBx0.Location = new System.Drawing.Point(613, 9);
+            this.AssignmentCmBx0.Name = "AssignmentCmBx0";
+            this.AssignmentCmBx0.ShadowDecoration.Parent = this.AssignmentCmBx0;
+            this.AssignmentCmBx0.Size = new System.Drawing.Size(89, 31);
+            this.AssignmentCmBx0.TabIndex = 9;
             // 
-            // RecordPanel
+            // RecordPanel0
             // 
-            this.RecordPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
-            this.RecordPanel.Controls.Add(this.PermittedRdBtn);
-            this.RecordPanel.Controls.Add(this.AttendedRdBtn);
-            this.RecordPanel.Controls.Add(this.NotAttendedRdBtn);
-            this.RecordPanel.Location = new System.Drawing.Point(475, 8);
-            this.RecordPanel.Name = "RecordPanel";
-            this.RecordPanel.Size = new System.Drawing.Size(102, 39);
-            this.RecordPanel.TabIndex = 9;
+            this.RecordPanel0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.RecordPanel0.Controls.Add(this.PermittedRdBtn0);
+            this.RecordPanel0.Controls.Add(this.AttendedRdBtn0);
+            this.RecordPanel0.Controls.Add(this.NotAttendedRdBtn0);
+            this.RecordPanel0.Location = new System.Drawing.Point(475, 8);
+            this.RecordPanel0.Name = "RecordPanel0";
+            this.RecordPanel0.Size = new System.Drawing.Size(102, 39);
+            this.RecordPanel0.TabIndex = 9;
             // 
-            // PermittedRdBtn
+            // PermittedRdBtn0
             // 
-            this.PermittedRdBtn.BackColor = System.Drawing.Color.Transparent;
-            this.PermittedRdBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(0)))));
-            this.PermittedRdBtn.CheckedState.BorderThickness = 0;
-            this.PermittedRdBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(0)))));
-            this.PermittedRdBtn.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(0)))));
-            this.PermittedRdBtn.CheckedState.Parent = this.PermittedRdBtn;
-            this.PermittedRdBtn.Location = new System.Drawing.Point(43, 10);
-            this.PermittedRdBtn.Name = "PermittedRdBtn";
-            this.PermittedRdBtn.ShadowDecoration.Parent = this.PermittedRdBtn;
-            this.PermittedRdBtn.Size = new System.Drawing.Size(20, 20);
-            this.PermittedRdBtn.TabIndex = 18;
-            this.PermittedRdBtn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(0)))));
-            this.PermittedRdBtn.UncheckedState.BorderThickness = 2;
-            this.PermittedRdBtn.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.PermittedRdBtn.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.PermittedRdBtn.UncheckedState.Parent = this.PermittedRdBtn;
-            this.PermittedRdBtn.UseTransparentBackground = true;
+            this.PermittedRdBtn0.BackColor = System.Drawing.Color.Transparent;
+            this.PermittedRdBtn0.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(0)))));
+            this.PermittedRdBtn0.CheckedState.BorderThickness = 0;
+            this.PermittedRdBtn0.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(0)))));
+            this.PermittedRdBtn0.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(0)))));
+            this.PermittedRdBtn0.CheckedState.Parent = this.PermittedRdBtn0;
+            this.PermittedRdBtn0.Location = new System.Drawing.Point(43, 10);
+            this.PermittedRdBtn0.Name = "PermittedRdBtn0";
+            this.PermittedRdBtn0.ShadowDecoration.Parent = this.PermittedRdBtn0;
+            this.PermittedRdBtn0.Size = new System.Drawing.Size(20, 20);
+            this.PermittedRdBtn0.TabIndex = 18;
+            this.PermittedRdBtn0.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(0)))));
+            this.PermittedRdBtn0.UncheckedState.BorderThickness = 2;
+            this.PermittedRdBtn0.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.PermittedRdBtn0.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.PermittedRdBtn0.UncheckedState.Parent = this.PermittedRdBtn0;
+            this.PermittedRdBtn0.UseTransparentBackground = true;
             // 
-            // AttendedRdBtn
+            // AttendedRdBtn0
             // 
-            this.AttendedRdBtn.BackColor = System.Drawing.Color.Transparent;
-            this.AttendedRdBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
-            this.AttendedRdBtn.CheckedState.BorderThickness = 0;
-            this.AttendedRdBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
-            this.AttendedRdBtn.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
-            this.AttendedRdBtn.CheckedState.Parent = this.AttendedRdBtn;
-            this.AttendedRdBtn.Location = new System.Drawing.Point(17, 10);
-            this.AttendedRdBtn.Name = "AttendedRdBtn";
-            this.AttendedRdBtn.ShadowDecoration.Parent = this.AttendedRdBtn;
-            this.AttendedRdBtn.Size = new System.Drawing.Size(20, 20);
-            this.AttendedRdBtn.TabIndex = 17;
-            this.AttendedRdBtn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
-            this.AttendedRdBtn.UncheckedState.BorderThickness = 2;
-            this.AttendedRdBtn.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.AttendedRdBtn.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.AttendedRdBtn.UncheckedState.Parent = this.AttendedRdBtn;
-            this.AttendedRdBtn.UseTransparentBackground = true;
+            this.AttendedRdBtn0.BackColor = System.Drawing.Color.Transparent;
+            this.AttendedRdBtn0.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
+            this.AttendedRdBtn0.CheckedState.BorderThickness = 0;
+            this.AttendedRdBtn0.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
+            this.AttendedRdBtn0.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
+            this.AttendedRdBtn0.CheckedState.Parent = this.AttendedRdBtn0;
+            this.AttendedRdBtn0.Location = new System.Drawing.Point(17, 10);
+            this.AttendedRdBtn0.Name = "AttendedRdBtn0";
+            this.AttendedRdBtn0.ShadowDecoration.Parent = this.AttendedRdBtn0;
+            this.AttendedRdBtn0.Size = new System.Drawing.Size(20, 20);
+            this.AttendedRdBtn0.TabIndex = 17;
+            this.AttendedRdBtn0.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(224)))), ((int)(((byte)(0)))));
+            this.AttendedRdBtn0.UncheckedState.BorderThickness = 2;
+            this.AttendedRdBtn0.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.AttendedRdBtn0.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.AttendedRdBtn0.UncheckedState.Parent = this.AttendedRdBtn0;
+            this.AttendedRdBtn0.UseTransparentBackground = true;
             // 
-            // NotAttendedRdBtn
+            // NotAttendedRdBtn0
             // 
-            this.NotAttendedRdBtn.BackColor = System.Drawing.Color.Transparent;
-            this.NotAttendedRdBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.NotAttendedRdBtn.CheckedState.BorderThickness = 0;
-            this.NotAttendedRdBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.NotAttendedRdBtn.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.NotAttendedRdBtn.CheckedState.Parent = this.NotAttendedRdBtn;
-            this.NotAttendedRdBtn.Location = new System.Drawing.Point(69, 10);
-            this.NotAttendedRdBtn.Name = "NotAttendedRdBtn";
-            this.NotAttendedRdBtn.ShadowDecoration.Parent = this.NotAttendedRdBtn;
-            this.NotAttendedRdBtn.Size = new System.Drawing.Size(20, 20);
-            this.NotAttendedRdBtn.TabIndex = 15;
-            this.NotAttendedRdBtn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.NotAttendedRdBtn.UncheckedState.BorderThickness = 2;
-            this.NotAttendedRdBtn.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.NotAttendedRdBtn.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.NotAttendedRdBtn.UncheckedState.Parent = this.NotAttendedRdBtn;
-            this.NotAttendedRdBtn.UseTransparentBackground = true;
+            this.NotAttendedRdBtn0.BackColor = System.Drawing.Color.Transparent;
+            this.NotAttendedRdBtn0.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.NotAttendedRdBtn0.CheckedState.BorderThickness = 0;
+            this.NotAttendedRdBtn0.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.NotAttendedRdBtn0.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.NotAttendedRdBtn0.CheckedState.Parent = this.NotAttendedRdBtn0;
+            this.NotAttendedRdBtn0.Location = new System.Drawing.Point(69, 10);
+            this.NotAttendedRdBtn0.Name = "NotAttendedRdBtn0";
+            this.NotAttendedRdBtn0.ShadowDecoration.Parent = this.NotAttendedRdBtn0;
+            this.NotAttendedRdBtn0.Size = new System.Drawing.Size(20, 20);
+            this.NotAttendedRdBtn0.TabIndex = 15;
+            this.NotAttendedRdBtn0.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.NotAttendedRdBtn0.UncheckedState.BorderThickness = 2;
+            this.NotAttendedRdBtn0.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.NotAttendedRdBtn0.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.NotAttendedRdBtn0.UncheckedState.Parent = this.NotAttendedRdBtn0;
+            this.NotAttendedRdBtn0.UseTransparentBackground = true;
             // 
-            // LastLoginDateLbl
+            // LastLoginDateLbl0
             // 
-            this.LastLoginDateLbl.AutoSize = true;
-            this.LastLoginDateLbl.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LastLoginDateLbl.Location = new System.Drawing.Point(346, 16);
-            this.LastLoginDateLbl.Name = "LastLoginDateLbl";
-            this.LastLoginDateLbl.Size = new System.Drawing.Size(80, 23);
-            this.LastLoginDateLbl.TabIndex = 12;
-            this.LastLoginDateLbl.Text = "14.03.21";
+            this.LastLoginDateLbl0.AutoSize = true;
+            this.LastLoginDateLbl0.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LastLoginDateLbl0.Location = new System.Drawing.Point(346, 16);
+            this.LastLoginDateLbl0.Name = "LastLoginDateLbl0";
+            this.LastLoginDateLbl0.Size = new System.Drawing.Size(44, 23);
+            this.LastLoginDateLbl0.TabIndex = 12;
+            this.LastLoginDateLbl0.Text = "date";
             // 
-            // UserImagePcBx
+            // UserImagePcBx0
             // 
-            this.UserImagePcBx.Image = global::LogBookTask.Properties.Resources.userImage1;
-            this.UserImagePcBx.Location = new System.Drawing.Point(27, 6);
-            this.UserImagePcBx.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.UserImagePcBx.Name = "UserImagePcBx";
-            this.UserImagePcBx.Size = new System.Drawing.Size(47, 42);
-            this.UserImagePcBx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.UserImagePcBx.TabIndex = 11;
-            this.UserImagePcBx.TabStop = false;
+            this.UserImagePcBx0.Image = global::LogBookTask.Properties.Resources.userImage1;
+            this.UserImagePcBx0.Location = new System.Drawing.Point(27, 6);
+            this.UserImagePcBx0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UserImagePcBx0.Name = "UserImagePcBx0";
+            this.UserImagePcBx0.Size = new System.Drawing.Size(47, 42);
+            this.UserImagePcBx0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserImagePcBx0.TabIndex = 11;
+            this.UserImagePcBx0.TabStop = false;
             // 
-            // UserFullnameLbl
+            // UserFullnameLbl0
             // 
-            this.UserFullnameLbl.AutoSize = true;
-            this.UserFullnameLbl.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UserFullnameLbl.Location = new System.Drawing.Point(79, 16);
-            this.UserFullnameLbl.Name = "UserFullnameLbl";
-            this.UserFullnameLbl.Size = new System.Drawing.Size(194, 23);
-            this.UserFullnameLbl.TabIndex = 8;
-            this.UserFullnameLbl.Text = "Elgun Abasquliyev Fiday";
+            this.UserFullnameLbl0.AutoSize = true;
+            this.UserFullnameLbl0.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UserFullnameLbl0.Location = new System.Drawing.Point(79, 16);
+            this.UserFullnameLbl0.Name = "UserFullnameLbl0";
+            this.UserFullnameLbl0.Size = new System.Drawing.Size(144, 23);
+            this.UserFullnameLbl0.TabIndex = 8;
+            this.UserFullnameLbl0.Text = "Student Fullname";
             // 
             // NoLbl
             // 
@@ -594,15 +596,15 @@ namespace LogBookTask
             this.NoLbl.TabIndex = 7;
             this.NoLbl.Text = "1";
             // 
-            // panel6
+            // StudentSeperatorPnl0
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.StudentSeperatorPnl0.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(86)))), ((int)(((byte)(127)))));
-            this.panel6.Location = new System.Drawing.Point(-1, 144);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1288, 1);
-            this.panel6.TabIndex = 8;
+            this.StudentSeperatorPnl0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(86)))), ((int)(((byte)(127)))));
+            this.StudentSeperatorPnl0.Location = new System.Drawing.Point(0, 0);
+            this.StudentSeperatorPnl0.Name = "StudentSeperatorPnl0";
+            this.StudentSeperatorPnl0.Size = new System.Drawing.Size(1255, 1);
+            this.StudentSeperatorPnl0.TabIndex = 8;
             // 
             // label7
             // 
@@ -619,38 +621,38 @@ namespace LogBookTask
             this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.guna2VScrollBar1.HoverState.Parent = null;
             this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(1253, 145);
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(1253, 144);
             this.guna2VScrollBar1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
             this.guna2VScrollBar1.Name = "guna2VScrollBar1";
             this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
             this.guna2VScrollBar1.ScrollbarSize = 28;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(28, 405);
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(28, 406);
             this.guna2VScrollBar1.TabIndex = 15;
             this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             // 
-            // guna2TextBox1
+            // LessonSubjectTxtBx
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(739, 45);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(253, 36);
-            this.guna2TextBox1.TabIndex = 16;
+            this.LessonSubjectTxtBx.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LessonSubjectTxtBx.DefaultText = "";
+            this.LessonSubjectTxtBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.LessonSubjectTxtBx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.LessonSubjectTxtBx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LessonSubjectTxtBx.DisabledState.Parent = this.LessonSubjectTxtBx;
+            this.LessonSubjectTxtBx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LessonSubjectTxtBx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.LessonSubjectTxtBx.FocusedState.Parent = this.LessonSubjectTxtBx;
+            this.LessonSubjectTxtBx.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LessonSubjectTxtBx.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.LessonSubjectTxtBx.HoverState.Parent = this.LessonSubjectTxtBx;
+            this.LessonSubjectTxtBx.Location = new System.Drawing.Point(739, 45);
+            this.LessonSubjectTxtBx.Name = "LessonSubjectTxtBx";
+            this.LessonSubjectTxtBx.PasswordChar = '\0';
+            this.LessonSubjectTxtBx.PlaceholderText = "";
+            this.LessonSubjectTxtBx.SelectedText = "";
+            this.LessonSubjectTxtBx.ShadowDecoration.Parent = this.LessonSubjectTxtBx;
+            this.LessonSubjectTxtBx.Size = new System.Drawing.Size(253, 36);
+            this.LessonSubjectTxtBx.TabIndex = 16;
             // 
             // SaveLessonSubjectBtn
             // 
@@ -677,11 +679,10 @@ namespace LogBookTask
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1281, 550);
             this.Controls.Add(this.SaveLessonSubjectBtn);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.LessonSubjectTxtBx);
             this.Controls.Add(this.guna2VScrollBar1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.UserPanel);
+            this.Controls.Add(this.UserPanel0);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.TeacherCheckPanel);
@@ -691,22 +692,23 @@ namespace LogBookTask
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.TeacherCheckPanel.ResumeLayout(false);
             this.TeacherCheckPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.UserPanel.ResumeLayout(false);
-            this.UserPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WriteCommentBtn)).EndInit();
-            this.RecordPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UserImagePcBx)).EndInit();
+            this.CrystallsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ClearCrystallsBtn0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThreeCrystallBtn0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TwoCrystallBtn0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OneCrystallBtn0)).EndInit();
+            this.UserPanel0.ResumeLayout(false);
+            this.UserPanel0.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WriteCommentBtn0)).EndInit();
+            this.RecordPanel0.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UserImagePcBx0)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -731,27 +733,27 @@ namespace LogBookTask
         private Guna.UI2.WinForms.Guna2Button CloseBtn;
         private Guna.UI2.WinForms.Guna2Button MinimizeBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel UserPanel;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox UserImagePcBx;
-        private System.Windows.Forms.Label UserFullnameLbl;
+        private System.Windows.Forms.Panel CrystallsPanel;
+        private System.Windows.Forms.PictureBox ThreeCrystallBtn0;
+        private System.Windows.Forms.PictureBox TwoCrystallBtn0;
+        private System.Windows.Forms.PictureBox OneCrystallBtn0;
+        private System.Windows.Forms.Panel UserPanel0;
+        private System.Windows.Forms.Panel StudentSeperatorPnl0;
+        private System.Windows.Forms.PictureBox ClearCrystallsBtn0;
+        private System.Windows.Forms.PictureBox UserImagePcBx0;
+        private System.Windows.Forms.Label UserFullnameLbl0;
         private System.Windows.Forms.Label NoLbl;
-        private System.Windows.Forms.Label LastLoginDateLbl;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton NotAttendedRdBtn;
-        private System.Windows.Forms.Panel RecordPanel;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton AttendedRdBtn;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton PermittedRdBtn;
-        private Guna.UI2.WinForms.Guna2ComboBox AssignmentCmBx;
-        private Guna.UI2.WinForms.Guna2ComboBox ClassWorkCmBx;
-        private System.Windows.Forms.PictureBox WriteCommentBtn;
+        private System.Windows.Forms.Label LastLoginDateLbl0;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton NotAttendedRdBtn0;
+        private System.Windows.Forms.Panel RecordPanel0;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton AttendedRdBtn0;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton PermittedRdBtn0;
+        private Guna.UI2.WinForms.Guna2ComboBox AssignmentCmBx0;
+        private Guna.UI2.WinForms.Guna2ComboBox ClassWorkCmBx0;
+        private System.Windows.Forms.PictureBox WriteCommentBtn0;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox LessonSubjectTxtBx;
         private Guna.UI2.WinForms.Guna2Button SaveLessonSubjectBtn;
     }
 }

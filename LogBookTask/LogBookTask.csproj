@@ -53,13 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\Human.cs" />
     <Compile Include="DraggableForm.cs" />
+    <Compile Include="Entities\Class.cs" />
+    <Compile Include="Entities\Lesson.cs" />
+    <Compile Include="Entities\LogBook.cs" />
+    <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\Subject.cs" />
+    <Compile Include="Entities\Teacher.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abstracts\Id.cs" />
+    <Compile Include="Helpers\LogBookHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -93,11 +103,11 @@
     <None Include="Resources\ezgif.com-gif-maker.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
     <None Include="Resources\feedbackImage.png" />
     <None Include="Resources\userImage.jpg" />
     <None Include="Resources\userImage.png" />
     <None Include="Resources\xImage.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
