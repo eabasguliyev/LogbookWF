@@ -12,28 +12,72 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using LogBookTask.Entities;
+using LogBookTask.Enums;
 using LogBookTask.Helpers;
 
 namespace LogBookTask
 {
     public partial class Form1 : Form
     {
-        private LogBook _logBook;
+        private Class _class;
+        private Lesson _lesson;
 
+        private string _fileName;
+
+        private UserPhoto _userPhoto;
         public Form1()
         {
             InitializeComponent();
 
-            _logBook = new LogBook();
+            var fileName = "FSDA_3914_az.json";
 
-            var newClass = new Class()
+
+            if (File.Exists(fileName))
             {
-                ClassName = "FSDA_3914_az",
-                Students = LogBookHelper.GetStudents(),
-                //Teachers = LogBookHelper.GetTeachers(),
-            };
+                _class = FileHelper.ReadClassFromJson(fileName);
 
-            _logBook.Classes.Add(newClass);
+                foreach (var student in _class.Students)
+                {
+                    if (student.ImageBytes == null)
+                        continue;
+
+                    student.UserImage = ImageHelper.ConvertBytesToImage(student.ImageBytes);
+                }
+            }
+
+            if (_class == null)
+            {
+                var newClass = new Class()
+                {
+                    ClassName = "FSDA_3914_az",
+                    Students = LogBookHelper.GetStudents(),
+                    Teachers = LogBookHelper.GetTeachers(),
+                };
+
+                _class = newClass;
+            }
+
+            var now = DateTime.Now;
+            _fileName = $"{now.Day}-{now.Month}-{now.Year}.json";
+
+            if (File.Exists(_fileName))
+            {
+                _lesson = FileHelper.ReadFromJson(_fileName);
+            }
+
+            if (_lesson == null)
+            {
+                _lesson = new Lesson() { Date = DateTime.Now };
+
+                foreach (var student in _class.Students)
+                {
+                    var newStudentRecord = new StudentRecord();
+
+                    newStudentRecord.Student = student;
+
+                    _lesson.StudentRecords.Add(newStudentRecord);
+                }
+            }
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -91,37 +135,86 @@ namespace LogBookTask
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void FillStudentsToUserPanels(List<Student> students)
+        private void FillStudentsToUserPanels(List<StudentRecord> studentRecords)
         {
-            if (students.Count == 0)
+            if (studentRecords.Count == 0)
                 return;
 
-            for (int i = 0; i < students.Count; i++)
+            for (int i = 0; i < studentRecords.Count; i++)
             {
-                var student = students[i];
+                var studentRecord = studentRecords[i];
                 var newUserPanel = CreateNewUserPanel(i);
-
+                
                 newUserPanel.Controls[$"NoLbl{i}"].Text = (i + 1).ToString();
                 newUserPanel.Controls[$"UserFullnameLbl{i}"].Text =
-                    $"{student.FirstName} {student.LastName} {student.FatherName}";
-                newUserPanel.Controls[$"LastLoginDateLbl{i}"].Text = student.UserLastLogin;
+                    $"{studentRecord.Student.FirstName} {studentRecord.Student.LastName} {studentRecord.Student.FatherName}";
+                newUserPanel.Controls[$"LastLoginDateLbl{i}"].Text = studentRecord.Student.UserLastLogin;
+
+
+                Guna2CustomRadioButton rdBtn = null;
+                switch (studentRecord.RecordType)
+                {
+                    case RecordType.Attended:
+                    {
+                        rdBtn = newUserPanel.Controls[$"RecordPanel{i}"].Controls[$"AttendedRdBtn{i}"] as Guna2CustomRadioButton;
+                        rdBtn.Checked = true;
+                        break;
+                    }
+                    case RecordType.Permitted:
+                    {
+                        rdBtn = newUserPanel.Controls[$"RecordPanel{i}"].Controls[$"PermittedRdBtn{i}"] as Guna2CustomRadioButton;
+                        rdBtn.Checked = true;
+
+                        break;
+                    }
+                    case RecordType.NotAttended:
+                    {
+                        rdBtn = newUserPanel.Controls[$"RecordPanel{i}"].Controls[$"NotAttendedRdBtn{i}"] as Guna2CustomRadioButton;
+                        rdBtn.Checked = true;
+                        break;
+                    }
+                }
+                
+
+                if (studentRecord.AssignmentPoint != 0)
+                {
+                    var assignmentCmBx = newUserPanel.Controls[$"AssignmentCmBx{i}"] as Guna2ComboBox;
+
+                    assignmentCmBx.SelectedIndex = assignmentCmBx.Items.IndexOf(studentRecord.AssignmentPoint.ToString());
+                }
+
+                if (studentRecord.ClassWorkPoint != 0)
+                {
+                    var classWorkCmBx = newUserPanel.Controls[$"ClassWorkCmBx{i}"] as Guna2ComboBox;
+
+                    classWorkCmBx.SelectedIndex = classWorkCmBx.Items.IndexOf(studentRecord.ClassWorkPoint.ToString());
+                }
+
+                if (studentRecord.Diamonds > 0)
+                {
+                    ChangeDiamondsImage(newUserPanel.Controls[$"CrystallsPanel{i}"].Controls, studentRecord.Diamonds - 1, true);
+                }
             }
         }
         private Panel CreateNewUserPanel(int studentNo)
         {
             var newUserPanel = new Panel();
             newUserPanel.BackColor = Color.FromArgb(235, 249, 255);
+            newUserPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                | System.Windows.Forms.AnchorStyles.Right)));
             newUserPanel.Size = new Size(940, 45);
-            newUserPanel.Location = new Point(0, 117 + studentNo * newUserPanel.Size.Height);
+            newUserPanel.Location = new Point(0, studentNo * newUserPanel.Size.Height);
             newUserPanel.Name = $"UserPanel{studentNo}";
+            newUserPanel.Tag = studentNo;
 
-            this.Controls.Add(newUserPanel);
+            this.UsersPanel.Controls.Add(newUserPanel);
 
             var newStudentSeperatorPnl = new Panel();
             newStudentSeperatorPnl.BackColor = Color.FromArgb(16, 86, 127);
             newStudentSeperatorPnl.Size = new Size(941, 1);
             newStudentSeperatorPnl.Location = new Point(0, 0);
             newStudentSeperatorPnl.Name = $"StudentSeperatorPnl{studentNo}";
+            newStudentSeperatorPnl.Tag = studentNo;
 
             newUserPanel.Controls.Add(newStudentSeperatorPnl);
 
@@ -131,6 +224,7 @@ namespace LogBookTask
             newNoLbl.Location = new System.Drawing.Point(5, 15);
             newNoLbl.Name = $"NoLbl{studentNo}";
             newNoLbl.AutoSize = true;
+            newNoLbl.Tag = studentNo;
 
             newUserPanel.Controls.Add(newNoLbl);
 
@@ -141,6 +235,9 @@ namespace LogBookTask
             newUserImagePcBx.Name = $"UserImagePcBx{studentNo}";
             newUserImagePcBx.Size = new Size(35, 34);
             newUserImagePcBx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            newUserImagePcBx.Tag = studentNo;
+            newUserImagePcBx.MouseEnter += UserImagePcBx0_MouseEnter;
+            newUserImagePcBx.MouseLeave += UserImagePcBx0_MouseLeave;
 
             newUserPanel.Controls.Add(newUserImagePcBx);
 
@@ -150,6 +247,7 @@ namespace LogBookTask
             newUserFullNameLbl.Location = new Point(59, 13);
             newUserFullNameLbl.Name = $"UserFullnameLbl{studentNo}";
             newUserFullNameLbl.AutoSize = true;
+            newUserFullNameLbl.Tag = studentNo;
 
             newUserPanel.Controls.Add(newUserFullNameLbl);
 
@@ -159,6 +257,7 @@ namespace LogBookTask
             newLastLoginDateLbl.Location = new Point(260, 13);
             newLastLoginDateLbl.Name = $"LastLoginDateLbl{studentNo}";
             newLastLoginDateLbl.AutoSize = true;
+            newLastLoginDateLbl.Tag = studentNo;
 
             newUserPanel.Controls.Add(newLastLoginDateLbl);
 
@@ -167,6 +266,7 @@ namespace LogBookTask
             newRecordPanel.Size = new Size(76, 32);
             newRecordPanel.Location = new Point(356, 6);
             newRecordPanel.Name = $"RecordPanel{studentNo}";
+            newRecordPanel.Tag = studentNo;
 
             newUserPanel.Controls.Add(newRecordPanel);
 
@@ -180,6 +280,8 @@ namespace LogBookTask
             newAttendedRdBtn.Location = new Point(13, 8);
             newAttendedRdBtn.Size = new Size(15, 16);
             newAttendedRdBtn.Name = $"AttendedRdBtn{studentNo}";
+            newAttendedRdBtn.Tag = studentNo;
+            newAttendedRdBtn.CheckedChanged += AttendedRdBtn0_CheckedChanged;
 
             newRecordPanel.Controls.Add(newAttendedRdBtn);
 
@@ -191,6 +293,8 @@ namespace LogBookTask
             newNotAttendedRdBtn.Location = new Point(52, 8);
             newNotAttendedRdBtn.Size = new Size(15, 16);
             newNotAttendedRdBtn.Name = $"NotAttendedRdBtn{studentNo}";
+            newNotAttendedRdBtn.Tag = studentNo;
+            newNotAttendedRdBtn.CheckedChanged += NotAttendedRdBtn0_CheckedChanged;
 
             newRecordPanel.Controls.Add(newNotAttendedRdBtn);
 
@@ -202,6 +306,8 @@ namespace LogBookTask
             newPermittedRdBtn.Location = new Point(32, 8);
             newPermittedRdBtn.Size = new Size(15, 16);
             newPermittedRdBtn.Name = $"PermittedRdBtn{studentNo}";
+            newPermittedRdBtn.Tag = studentNo;
+            newPermittedRdBtn.CheckedChanged += PermittedRdBtn0_CheckedChanged;
 
             newRecordPanel.Controls.Add(newPermittedRdBtn);
 
@@ -211,6 +317,7 @@ namespace LogBookTask
             newAssignmentCmBx.Name = $"AssignmentCmBx{studentNo}";
             newAssignmentCmBx.Location = new Point(460, 5);
             newAssignmentCmBx.Size = new Size(68, 20);
+            newAssignmentCmBx.Tag = studentNo;
             newAssignmentCmBx.Items.AddRange(new [] {
                 "-",
                 "12",
@@ -225,7 +332,7 @@ namespace LogBookTask
                 "3",
                 "2",
                 "1"});
-
+            newAssignmentCmBx.SelectedIndexChanged += AssignmentCmBx0_SelectedIndexChanged;
             newUserPanel.Controls.Add(newAssignmentCmBx);
 
             var newClassWorkCmBx = new Guna2ComboBox();
@@ -234,6 +341,7 @@ namespace LogBookTask
             newClassWorkCmBx.Name = $"ClassWorkCmBx{studentNo}";
             newClassWorkCmBx.Location = new Point(554, 5);
             newClassWorkCmBx.Size = new Size(68, 31);
+            newClassWorkCmBx.Tag = studentNo;
             newClassWorkCmBx.Items.AddRange(new[] {
                 "-",
                 "12",
@@ -248,6 +356,7 @@ namespace LogBookTask
                 "3",
                 "2",
                 "1"});
+            newClassWorkCmBx.SelectedIndexChanged += ClassWorkCmBx0_SelectedIndexChanged;
 
             newUserPanel.Controls.Add(newClassWorkCmBx);
 
@@ -258,51 +367,57 @@ namespace LogBookTask
             newCrystallsPanel.Size = new Size(139, 39);
             newCrystallsPanel.Location = new Point(645, 2);
             newCrystallsPanel.Name = $"CrystallsPanel{studentNo}";
-
+            newCrystallsPanel.Tag = studentNo;
             newUserPanel.Controls.Add(newCrystallsPanel);
 
             var newOneCrystallBtn = new PictureBox();
-            newOneCrystallBtn.Image = global::LogBookTask.Properties.Resources.crystalImage;
+            newOneCrystallBtn.Image = global::LogBookTask.Properties.Resources.diamond_64px_uncolor;
             newOneCrystallBtn.Location = new Point(0, 3);
             newOneCrystallBtn.Name = $"OneCrystallBtn{studentNo}";
             newOneCrystallBtn.Size = new Size(33, 32);
             newOneCrystallBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-
+            newOneCrystallBtn.Tag = studentNo;
+            newOneCrystallBtn.Click += OneCrystallBtn0_Click;
             newCrystallsPanel.Controls.Add(newOneCrystallBtn);
 
             var newTwoCrystallBtn = new PictureBox();
-            newTwoCrystallBtn.Image = global::LogBookTask.Properties.Resources.crystalImage;
+            newTwoCrystallBtn.Image = global::LogBookTask.Properties.Resources.diamond_64px_uncolor;
             newTwoCrystallBtn.Location = new Point(33, 3);
             newTwoCrystallBtn.Name = $"TwoCrystallBtn{studentNo}";
             newTwoCrystallBtn.Size = new Size(33, 32);
             newTwoCrystallBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-
+            newTwoCrystallBtn.Tag = studentNo;
+            newTwoCrystallBtn.Click += TwoCrystallBtn0_Click;
             newCrystallsPanel.Controls.Add(newTwoCrystallBtn);
 
             var newThreeCrystallBtn = new PictureBox();
-            newThreeCrystallBtn.Image = global::LogBookTask.Properties.Resources.crystalImage;
+            newThreeCrystallBtn.Image = global::LogBookTask.Properties.Resources.diamond_64px_uncolor;
             newThreeCrystallBtn.Location = new Point(66, 3);
             newThreeCrystallBtn.Name = $"ThreeCrystallBtn{studentNo}";
             newThreeCrystallBtn.Size = new Size(33, 32);
             newThreeCrystallBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-
+            newThreeCrystallBtn.Tag = studentNo;
+            newThreeCrystallBtn.Click += ThreeCrystallBtn0_Click;
             newCrystallsPanel.Controls.Add(newThreeCrystallBtn);
 
             var newClearCrystallsBtn = new PictureBox();
-            newClearCrystallsBtn.Image = global::LogBookTask.Properties.Resources.xImage;
+            newClearCrystallsBtn.Image = global::LogBookTask.Properties.Resources.delete_32px;
             newClearCrystallsBtn.Location = new Point(99, 3);
             newClearCrystallsBtn.Name = $"ClearCrystallsBtn{studentNo}";
             newClearCrystallsBtn.Size = new Size(33, 32);
             newClearCrystallsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-
+            newClearCrystallsBtn.Tag = studentNo;
+            newClearCrystallsBtn.Click += ClearCrystallsBtn0_Click;
             newCrystallsPanel.Controls.Add(newClearCrystallsBtn);
 
             var newWriteCommentBtn = new PictureBox();
-            newWriteCommentBtn.Image = global::LogBookTask.Properties.Resources.feedbackImage;
+            newWriteCommentBtn.Image = global::LogBookTask.Properties.Resources.comments_40px;
             newWriteCommentBtn.Location = new Point(842, 6);
             newWriteCommentBtn.Name = $"ClearCrystallsBtn{studentNo}";
             newWriteCommentBtn.Size = new Size(33, 32);
             newWriteCommentBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            newWriteCommentBtn.Tag = studentNo;
+            newWriteCommentBtn.Click += WriteCommentBtn0_Click;
 
             newUserPanel.Controls.Add(newWriteCommentBtn);
 
@@ -312,10 +427,301 @@ namespace LogBookTask
         private void Form1_Load(object sender, EventArgs e)
         {
             //CreateNewUserPanel(1);
-            //MessageBox.Show($"{WriteCommentBtn0.Location}");
-            //MessageBox.Show($"{WriteCommentBtn0.Size}");
+            //MessageBox.Show($"{guna2CirclePictureBox1.Location}");
+            //MessageBox.Show($"{guna2CirclePictureBox1.Size}");
 
-            FillStudentsToUserPanels(_logBook.Classes[0].Students);
+            if (_lesson.TeacherType == TeacherType.MainTeacher)
+            {
+                MainTeacherRdBtn.Checked = true;
+            }
+            else if(_lesson.TeacherType == TeacherType.AnotherTeacher)
+            {
+                AnotherTeacherRdBtn.Checked = true;
+            }
+
+            if (!string.IsNullOrWhiteSpace(_lesson.Subject))
+            {
+                LessonSubjectTxtBx.Text = _lesson.Subject;
+            }
+
+            DiamondsCountLbl.Text = _lesson.TotalDiamondCount.ToString();
+            FillStudentsToUserPanels(_lesson.StudentRecords);
+
+        }
+
+        private void AttendedRdBtn0_CheckedChanged(object sender, EventArgs e)
+        {
+            var rdBtn = sender as Guna2CustomRadioButton;
+
+            if (rdBtn.Checked)
+            {
+                var studentNo = (int)rdBtn.Tag;
+                _class.Students[studentNo].Records[DateTime.Now.ToShortDateString()] = RecordType.Attended;
+                _lesson.StudentRecords[studentNo].RecordType = RecordType.Attended;
+                ChangeUserActivity(rdBtn.Parent.Parent.Controls, studentNo, true);
+            }
+        }
+
+        private void PermittedRdBtn0_CheckedChanged(object sender, EventArgs e)
+        {
+            var rdBtn = sender as Guna2CustomRadioButton;
+
+            if (rdBtn.Checked)
+            {
+                var studentNo = (int)rdBtn.Tag;
+                _class.Students[studentNo].Records[DateTime.Now.ToShortDateString()] = RecordType.Permitted;
+                _lesson.StudentRecords[studentNo].RecordType = RecordType.Permitted;
+                ChangeUserActivity(rdBtn.Parent.Parent.Controls, studentNo, false);
+            }
+        }
+
+        private void NotAttendedRdBtn0_CheckedChanged(object sender, EventArgs e)
+        {
+            var rdBtn = sender as Guna2CustomRadioButton;
+
+            if (rdBtn.Checked)
+            {
+                var studentNo = (int)rdBtn.Tag;
+                _class.Students[studentNo].Records[DateTime.Now.ToShortDateString()] = RecordType.NotAttended;
+                _lesson.StudentRecords[studentNo].RecordType = RecordType.NotAttended;
+
+                ChangeUserActivity(rdBtn.Parent.Parent.Controls, studentNo, false);
+            }
+        }
+
+        private void ChangeUserActivity(Control.ControlCollection controls, int studentNo, bool status)
+        {
+            controls[$"AssignmentCmBx{studentNo}"].Enabled = status;
+            controls[$"ClassWorkCmBx{studentNo}"].Enabled = status;
+            controls[$"CrystallsPanel{studentNo}"].Enabled = status;
+        }
+
+        private void AssignmentCmBx0_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cmBx = sender as Guna2ComboBox;
+
+            if (cmBx.SelectedIndex != 0)
+            {
+                var studentNo = (int)cmBx.Tag;
+
+                _class.Students[studentNo].AssignmentPoints[DateTime.Now.ToShortDateString()] = Convert.ToInt32(cmBx.SelectedItem);
+                _lesson.StudentRecords[studentNo].AssignmentPoint = Convert.ToInt32(cmBx.SelectedItem);
+            }
+        }
+
+        private void ClassWorkCmBx0_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cmBx = sender as Guna2ComboBox;
+
+            if (cmBx.SelectedIndex != 0)
+            {
+                var studentNo = (int)cmBx.Tag;
+                var value = Convert.ToInt32(ClassWorkCmBx0.SelectedItem);
+                
+                _class.Students[studentNo].ClassWorkPoints[DateTime.Now.ToShortDateString()] = Convert.ToInt32(cmBx.SelectedItem);
+                _lesson.StudentRecords[studentNo].ClassWorkPoint = Convert.ToInt32(cmBx.SelectedItem);
+            }
+        }
+
+        private void SaveLessonSubjectBtn_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(LessonSubjectTxtBx.Text))
+                return;
+
+            _class.Subjects[DateTime.Now.ToShortDateString()] = LessonSubjectTxtBx.Text;
+            _lesson.Subject = LessonSubjectTxtBx.Text;
+        }
+
+        private void MainTeacherRdBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if(MainTeacherRdBtn.Checked)
+            {
+                _lesson.TeacherType = TeacherType.MainTeacher;
+                _lesson.Teacher = _class.Teachers[0];
+                UsersPanel.Enabled = true;
+            }
+        }
+
+        private void AnotherTeacherRdBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AnotherTeacherRdBtn.Checked)
+            {
+                _lesson.TeacherType = TeacherType.AnotherTeacher;
+                _lesson.Teacher = _class.Teachers[1];
+                UsersPanel.Enabled = true;
+            }
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            FileHelper.WriteToJson(_fileName, _lesson);
+            FileHelper.WriteClassToJson($"{_class.ClassName}.json", _class);
+        }
+
+        private void OneCrystallBtn0_Click(object sender, EventArgs e)
+        {
+            var clickedOneCrystall = sender as PictureBox;
+            var tag = (int)clickedOneCrystall.Tag;
+
+            if (_lesson.StudentRecords[tag].Diamonds == 1)
+                return;
+            
+            if (_lesson.StudentRecords[tag].Diamonds > 1)
+            {
+                ChangeDiamondsImage(clickedOneCrystall.Parent.Controls, 0, false);
+                _lesson.TotalDiamondCount += _lesson.StudentRecords[tag].Diamonds;
+                _class.Students[tag].Diamonds -= _lesson.StudentRecords[tag].Diamonds;
+                _lesson.StudentRecords[tag].Diamonds = 1;
+                _class.Students[tag].Diamonds += _lesson.StudentRecords[tag].Diamonds;
+                _lesson.TotalDiamondCount -= _lesson.StudentRecords[tag].Diamonds;
+            }
+            else
+            {
+                if (_lesson.TotalDiamondCount > 0)
+                {
+                    ChangeDiamondsImage(clickedOneCrystall.Parent.Controls, 0, true);
+                    _lesson.StudentRecords[tag].Diamonds = 1;
+                    _class.Students[tag].Diamonds += _lesson.StudentRecords[tag].Diamonds;
+                    _lesson.TotalDiamondCount -= _lesson.StudentRecords[tag].Diamonds;
+                }
+            }
+
+            this.DiamondsCountLbl.Text = _lesson.TotalDiamondCount.ToString();
+        }
+
+        private void TwoCrystallBtn0_Click(object sender, EventArgs e)
+        {
+            var clickedTwoCrystall = sender as PictureBox;
+            var tag = (int)clickedTwoCrystall.Tag;
+
+
+            if (_lesson.StudentRecords[tag].Diamonds == 2)
+                return;
+                
+            if (_lesson.StudentRecords[tag].Diamonds > 2)
+            {
+                ChangeDiamondsImage(clickedTwoCrystall.Parent.Controls, 1, false);
+                _lesson.TotalDiamondCount += _lesson.StudentRecords[tag].Diamonds;
+                _class.Students[tag].Diamonds -= _lesson.StudentRecords[tag].Diamonds;
+                _lesson.StudentRecords[tag].Diamonds = 2;
+                _class.Students[tag].Diamonds += _lesson.StudentRecords[tag].Diamonds;
+                _lesson.TotalDiamondCount -= _lesson.StudentRecords[tag].Diamonds;
+            }
+            else
+            {
+                if (_lesson.StudentRecords[tag].Diamonds + _lesson.TotalDiamondCount < 2)
+                {
+                    return;
+                }
+
+                _lesson.TotalDiamondCount += _lesson.StudentRecords[tag].Diamonds;
+
+                if (_lesson.TotalDiamondCount > 1)
+                {
+                    ChangeDiamondsImage(clickedTwoCrystall.Parent.Controls, 1, true);
+                    _lesson.StudentRecords[tag].Diamonds = 2;
+                    _class.Students[tag].Diamonds += _lesson.StudentRecords[tag].Diamonds;
+                    _lesson.TotalDiamondCount -= _lesson.StudentRecords[tag].Diamonds;
+                }
+            }
+
+            this.DiamondsCountLbl.Text = _lesson.TotalDiamondCount.ToString();
+        }
+
+        private void ChangeDiamondsImage(Control.ControlCollection controls, int index, bool isAscending)
+        {
+            if (isAscending)
+            {
+                for (int i = 0; i < index + 1; i++)
+                {
+                    var diamondImage = controls[i] as PictureBox;
+
+                    diamondImage.Image = Properties.Resources.diamond_64px;
+                }
+            }
+            else
+            {
+                for (int i = index + 1; i < controls.Count - 1; i++)
+                {
+                    var diamondImage = controls[i] as PictureBox;
+
+                    diamondImage.Image = Properties.Resources.diamond_64px_uncolor;
+                }
+            }
+        }
+
+        private void ThreeCrystallBtn0_Click(object sender, EventArgs e)
+        {
+            var clickedThreeCrystall = sender as PictureBox;
+            var tag = (int)clickedThreeCrystall.Tag;
+
+            if (_lesson.StudentRecords[tag].Diamonds + _lesson.TotalDiamondCount < 3)
+            {
+                return;
+            }
+
+            _lesson.TotalDiamondCount += _lesson.StudentRecords[tag].Diamonds;
+
+            if (_lesson.TotalDiamondCount > 2)
+            {
+                ChangeDiamondsImage(clickedThreeCrystall.Parent.Controls, 2, true);
+
+                _lesson.StudentRecords[tag].Diamonds = 3;
+                _class.Students[tag].Diamonds += _lesson.StudentRecords[tag].Diamonds;
+                _lesson.TotalDiamondCount -= _lesson.StudentRecords[tag].Diamonds;
+            }
+
+            this.DiamondsCountLbl.Text = _lesson.TotalDiamondCount.ToString();
+        }
+
+        private void ClearCrystallsBtn0_Click(object sender, EventArgs e)
+        {
+            var clickedClearCrystalls = sender as PictureBox;
+            var tag = (int)clickedClearCrystalls.Tag;
+
+            if (_lesson.StudentRecords[tag].Diamonds == 0)
+                return;
+
+            ChangeDiamondsImage(clickedClearCrystalls.Parent.Controls, -1, false);
+
+            _class.Students[tag].Diamonds -= _lesson.StudentRecords[tag].Diamonds;
+            _lesson.TotalDiamondCount += _lesson.StudentRecords[tag].Diamonds;
+            _lesson.StudentRecords[tag].Diamonds = 0;
+
+            this.DiamondsCountLbl.Text = _lesson.TotalDiamondCount.ToString();
+        }
+
+        private void UserImagePcBx0_MouseEnter(object sender, EventArgs e)
+        {
+            var pcBx = sender as PictureBox;
+            var userNo = (int)pcBx.Tag;
+            _userPhoto = new UserPhoto();
+
+            _userPhoto.BackgroundImage = _class.Students[userNo].UserImage;
+            _userPhoto.BackgroundImageLayout = ImageLayout.Stretch;
+            _userPhoto.StartPosition = FormStartPosition.Manual;
+
+            _userPhoto.Location = new Point(Cursor.Position.X + 30, Cursor.Position.Y - 10);
+            _userPhoto.Show();
+        }
+
+        private void UserImagePcBx0_MouseLeave(object sender, EventArgs e)
+        {
+            _userPhoto.Dispose();
+        }
+
+        private void WriteCommentBtn0_Click(object sender, EventArgs e)
+        {
+            var commentPcBx = sender as PictureBox;
+            var userNo = (int)commentPcBx.Tag;
+            var commentForm = new CommentForm();
+
+            if (commentForm.ShowDialog() == DialogResult.OK)
+            {
+                _class.Students[userNo].Comments[DateTime.Now.ToShortDateString()] = commentForm.Comment;
+            }
+
+            MessageBox.Show("Comment added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -29,17 +29,17 @@ namespace LogBookTask
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.TeacherCheckPanel = new System.Windows.Forms.Panel();
             this.AnotherTeacherRdBtn = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.MainTeeacherRdBtn = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.MainTeacherRdBtn = new Guna.UI2.WinForms.Guna2RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.MinimizeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.CloseBtn = new Guna.UI2.WinForms.Guna2Button();
             this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.CrystalCountLbl = new System.Windows.Forms.Label();
+            this.DiamondsCountLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,12 +47,7 @@ namespace LogBookTask
             this.label1 = new System.Windows.Forms.Label();
             this.SaveBtn = new Guna.UI2.WinForms.Guna2Button();
             this.CrystallsPanel = new System.Windows.Forms.Panel();
-            this.ClearCrystallsBtn0 = new System.Windows.Forms.PictureBox();
-            this.ThreeCrystallBtn0 = new System.Windows.Forms.PictureBox();
-            this.TwoCrystallBtn0 = new System.Windows.Forms.PictureBox();
-            this.OneCrystallBtn0 = new System.Windows.Forms.PictureBox();
             this.UserPanel0 = new System.Windows.Forms.Panel();
-            this.WriteCommentBtn0 = new System.Windows.Forms.PictureBox();
             this.ClassWorkCmBx0 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.AssignmentCmBx0 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.RecordPanel0 = new System.Windows.Forms.Panel();
@@ -60,33 +55,41 @@ namespace LogBookTask
             this.AttendedRdBtn0 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.NotAttendedRdBtn0 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.LastLoginDateLbl0 = new System.Windows.Forms.Label();
-            this.UserImagePcBx0 = new System.Windows.Forms.PictureBox();
             this.UserFullnameLbl0 = new System.Windows.Forms.Label();
             this.NoLbl = new System.Windows.Forms.Label();
             this.StudentSeperatorPnl0 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.LessonSubjectTxtBx = new Guna.UI2.WinForms.Guna2TextBox();
             this.SaveLessonSubjectBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.UsersPanel = new System.Windows.Forms.Panel();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.WriteCommentBtn0 = new System.Windows.Forms.PictureBox();
+            this.UserImagePcBx0 = new System.Windows.Forms.PictureBox();
+            this.ClearCrystallsBtn0 = new System.Windows.Forms.PictureBox();
+            this.ThreeCrystallBtn0 = new System.Windows.Forms.PictureBox();
+            this.TwoCrystallBtn0 = new System.Windows.Forms.PictureBox();
+            this.OneCrystallBtn0 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TeacherCheckPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.CrystallsPanel.SuspendLayout();
+            this.UserPanel0.SuspendLayout();
+            this.RecordPanel0.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WriteCommentBtn0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImagePcBx0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClearCrystallsBtn0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThreeCrystallBtn0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TwoCrystallBtn0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OneCrystallBtn0)).BeginInit();
-            this.UserPanel0.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WriteCommentBtn0)).BeginInit();
-            this.RecordPanel0.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserImagePcBx0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TeacherCheckPanel
             // 
             this.TeacherCheckPanel.Controls.Add(this.AnotherTeacherRdBtn);
-            this.TeacherCheckPanel.Controls.Add(this.MainTeeacherRdBtn);
+            this.TeacherCheckPanel.Controls.Add(this.MainTeacherRdBtn);
             this.TeacherCheckPanel.Location = new System.Drawing.Point(5, 45);
             this.TeacherCheckPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TeacherCheckPanel.Name = "TeacherCheckPanel";
@@ -112,25 +115,27 @@ namespace LogBookTask
             this.AnotherTeacherRdBtn.UncheckedState.BorderThickness = 2;
             this.AnotherTeacherRdBtn.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.AnotherTeacherRdBtn.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.AnotherTeacherRdBtn.CheckedChanged += new System.EventHandler(this.AnotherTeacherRdBtn_CheckedChanged);
             // 
-            // MainTeeacherRdBtn
+            // MainTeacherRdBtn
             // 
-            this.MainTeeacherRdBtn.AutoSize = true;
-            this.MainTeeacherRdBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MainTeeacherRdBtn.CheckedState.BorderThickness = 0;
-            this.MainTeeacherRdBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MainTeeacherRdBtn.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.MainTeeacherRdBtn.CheckedState.InnerOffset = -4;
-            this.MainTeeacherRdBtn.Location = new System.Drawing.Point(10, 7);
-            this.MainTeeacherRdBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MainTeeacherRdBtn.Name = "MainTeeacherRdBtn";
-            this.MainTeeacherRdBtn.Size = new System.Drawing.Size(111, 21);
-            this.MainTeeacherRdBtn.TabIndex = 0;
-            this.MainTeeacherRdBtn.Text = "Main teacher";
-            this.MainTeeacherRdBtn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.MainTeeacherRdBtn.UncheckedState.BorderThickness = 2;
-            this.MainTeeacherRdBtn.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.MainTeeacherRdBtn.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.MainTeacherRdBtn.AutoSize = true;
+            this.MainTeacherRdBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.MainTeacherRdBtn.CheckedState.BorderThickness = 0;
+            this.MainTeacherRdBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.MainTeacherRdBtn.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.MainTeacherRdBtn.CheckedState.InnerOffset = -4;
+            this.MainTeacherRdBtn.Location = new System.Drawing.Point(10, 7);
+            this.MainTeacherRdBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MainTeacherRdBtn.Name = "MainTeacherRdBtn";
+            this.MainTeacherRdBtn.Size = new System.Drawing.Size(111, 21);
+            this.MainTeacherRdBtn.TabIndex = 0;
+            this.MainTeacherRdBtn.Text = "Main teacher";
+            this.MainTeacherRdBtn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.MainTeacherRdBtn.UncheckedState.BorderThickness = 2;
+            this.MainTeacherRdBtn.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.MainTeacherRdBtn.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.MainTeacherRdBtn.CheckedChanged += new System.EventHandler(this.MainTeacherRdBtn_CheckedChanged);
             // 
             // panel1
             // 
@@ -154,9 +159,9 @@ namespace LogBookTask
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(8, 3);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(27, 5);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(180, 38);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(180, 34);
             this.guna2HtmlLabel1.TabIndex = 8;
             this.guna2HtmlLabel1.Text = "LogBook";
             // 
@@ -211,7 +216,7 @@ namespace LogBookTask
             this.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(222)))), ((int)(((byte)(247)))));
             this.HeaderPanel.Controls.Add(this.pictureBox1);
             this.HeaderPanel.Controls.Add(this.label6);
-            this.HeaderPanel.Controls.Add(this.CrystalCountLbl);
+            this.HeaderPanel.Controls.Add(this.DiamondsCountLbl);
             this.HeaderPanel.Controls.Add(this.label5);
             this.HeaderPanel.Controls.Add(this.label4);
             this.HeaderPanel.Controls.Add(this.label3);
@@ -222,17 +227,6 @@ namespace LogBookTask
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(1281, 57);
             this.HeaderPanel.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LogBookTask.Properties.Resources.crystalImage;
-            this.pictureBox1.Location = new System.Drawing.Point(935, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -245,16 +239,16 @@ namespace LogBookTask
             this.label6.TabIndex = 6;
             this.label6.Text = "Comment";
             // 
-            // CrystalCountLbl
+            // DiamondsCountLbl
             // 
-            this.CrystalCountLbl.AutoSize = true;
-            this.CrystalCountLbl.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.CrystalCountLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(145)))), ((int)(((byte)(218)))));
-            this.CrystalCountLbl.Location = new System.Drawing.Point(917, 20);
-            this.CrystalCountLbl.Name = "CrystalCountLbl";
-            this.CrystalCountLbl.Size = new System.Drawing.Size(19, 21);
-            this.CrystalCountLbl.TabIndex = 5;
-            this.CrystalCountLbl.Text = "5";
+            this.DiamondsCountLbl.AutoSize = true;
+            this.DiamondsCountLbl.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DiamondsCountLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(145)))), ((int)(((byte)(218)))));
+            this.DiamondsCountLbl.Location = new System.Drawing.Point(917, 20);
+            this.DiamondsCountLbl.Name = "DiamondsCountLbl";
+            this.DiamondsCountLbl.Size = new System.Drawing.Size(19, 21);
+            this.DiamondsCountLbl.TabIndex = 5;
+            this.DiamondsCountLbl.Text = "5";
             // 
             // label5
             // 
@@ -328,6 +322,7 @@ namespace LogBookTask
             this.SaveBtn.Size = new System.Drawing.Size(101, 34);
             this.SaveBtn.TabIndex = 5;
             this.SaveBtn.Text = "Save";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // CrystallsPanel
             // 
@@ -340,55 +335,12 @@ namespace LogBookTask
             this.CrystallsPanel.Size = new System.Drawing.Size(185, 48);
             this.CrystallsPanel.TabIndex = 6;
             // 
-            // ClearCrystallsBtn0
-            // 
-            this.ClearCrystallsBtn0.Image = global::LogBookTask.Properties.Resources.xImage;
-            this.ClearCrystallsBtn0.Location = new System.Drawing.Point(132, 4);
-            this.ClearCrystallsBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ClearCrystallsBtn0.Name = "ClearCrystallsBtn0";
-            this.ClearCrystallsBtn0.Size = new System.Drawing.Size(44, 40);
-            this.ClearCrystallsBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ClearCrystallsBtn0.TabIndex = 10;
-            this.ClearCrystallsBtn0.TabStop = false;
-            // 
-            // ThreeCrystallBtn0
-            // 
-            this.ThreeCrystallBtn0.Image = global::LogBookTask.Properties.Resources.crystalImage;
-            this.ThreeCrystallBtn0.Location = new System.Drawing.Point(88, 4);
-            this.ThreeCrystallBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ThreeCrystallBtn0.Name = "ThreeCrystallBtn0";
-            this.ThreeCrystallBtn0.Size = new System.Drawing.Size(44, 40);
-            this.ThreeCrystallBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ThreeCrystallBtn0.TabIndex = 9;
-            this.ThreeCrystallBtn0.TabStop = false;
-            // 
-            // TwoCrystallBtn0
-            // 
-            this.TwoCrystallBtn0.Image = global::LogBookTask.Properties.Resources.crystalImage;
-            this.TwoCrystallBtn0.Location = new System.Drawing.Point(44, 4);
-            this.TwoCrystallBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TwoCrystallBtn0.Name = "TwoCrystallBtn0";
-            this.TwoCrystallBtn0.Size = new System.Drawing.Size(44, 40);
-            this.TwoCrystallBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.TwoCrystallBtn0.TabIndex = 8;
-            this.TwoCrystallBtn0.TabStop = false;
-            // 
-            // OneCrystallBtn0
-            // 
-            this.OneCrystallBtn0.Image = global::LogBookTask.Properties.Resources.crystalImage;
-            this.OneCrystallBtn0.Location = new System.Drawing.Point(0, 4);
-            this.OneCrystallBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.OneCrystallBtn0.Name = "OneCrystallBtn0";
-            this.OneCrystallBtn0.Size = new System.Drawing.Size(44, 40);
-            this.OneCrystallBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.OneCrystallBtn0.TabIndex = 7;
-            this.OneCrystallBtn0.TabStop = false;
-            // 
             // UserPanel0
             // 
             this.UserPanel0.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UserPanel0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.UserPanel0.Controls.Add(this.guna2CirclePictureBox1);
             this.UserPanel0.Controls.Add(this.WriteCommentBtn0);
             this.UserPanel0.Controls.Add(this.ClassWorkCmBx0);
             this.UserPanel0.Controls.Add(this.AssignmentCmBx0);
@@ -401,20 +353,9 @@ namespace LogBookTask
             this.UserPanel0.Controls.Add(this.StudentSeperatorPnl0);
             this.UserPanel0.Location = new System.Drawing.Point(0, 144);
             this.UserPanel0.Name = "UserPanel0";
-            this.UserPanel0.Size = new System.Drawing.Size(1253, 55);
+            this.UserPanel0.Size = new System.Drawing.Size(1281, 55);
             this.UserPanel0.TabIndex = 7;
             this.UserPanel0.Visible = false;
-            // 
-            // WriteCommentBtn0
-            // 
-            this.WriteCommentBtn0.Image = global::LogBookTask.Properties.Resources.feedbackImage;
-            this.WriteCommentBtn0.Location = new System.Drawing.Point(1122, 7);
-            this.WriteCommentBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.WriteCommentBtn0.Name = "WriteCommentBtn0";
-            this.WriteCommentBtn0.Size = new System.Drawing.Size(44, 40);
-            this.WriteCommentBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.WriteCommentBtn0.TabIndex = 11;
-            this.WriteCommentBtn0.TabStop = false;
             // 
             // ClassWorkCmBx0
             // 
@@ -449,6 +390,7 @@ namespace LogBookTask
             this.ClassWorkCmBx0.ShadowDecoration.Parent = this.ClassWorkCmBx0;
             this.ClassWorkCmBx0.Size = new System.Drawing.Size(89, 31);
             this.ClassWorkCmBx0.TabIndex = 13;
+            this.ClassWorkCmBx0.SelectedIndexChanged += new System.EventHandler(this.ClassWorkCmBx0_SelectedIndexChanged);
             // 
             // AssignmentCmBx0
             // 
@@ -483,6 +425,7 @@ namespace LogBookTask
             this.AssignmentCmBx0.ShadowDecoration.Parent = this.AssignmentCmBx0;
             this.AssignmentCmBx0.Size = new System.Drawing.Size(89, 31);
             this.AssignmentCmBx0.TabIndex = 9;
+            this.AssignmentCmBx0.SelectedIndexChanged += new System.EventHandler(this.AssignmentCmBx0_SelectedIndexChanged);
             // 
             // RecordPanel0
             // 
@@ -514,6 +457,7 @@ namespace LogBookTask
             this.PermittedRdBtn0.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.PermittedRdBtn0.UncheckedState.Parent = this.PermittedRdBtn0;
             this.PermittedRdBtn0.UseTransparentBackground = true;
+            this.PermittedRdBtn0.CheckedChanged += new System.EventHandler(this.PermittedRdBtn0_CheckedChanged);
             // 
             // AttendedRdBtn0
             // 
@@ -534,6 +478,7 @@ namespace LogBookTask
             this.AttendedRdBtn0.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.AttendedRdBtn0.UncheckedState.Parent = this.AttendedRdBtn0;
             this.AttendedRdBtn0.UseTransparentBackground = true;
+            this.AttendedRdBtn0.CheckedChanged += new System.EventHandler(this.AttendedRdBtn0_CheckedChanged);
             // 
             // NotAttendedRdBtn0
             // 
@@ -554,6 +499,7 @@ namespace LogBookTask
             this.NotAttendedRdBtn0.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.NotAttendedRdBtn0.UncheckedState.Parent = this.NotAttendedRdBtn0;
             this.NotAttendedRdBtn0.UseTransparentBackground = true;
+            this.NotAttendedRdBtn0.CheckedChanged += new System.EventHandler(this.NotAttendedRdBtn0_CheckedChanged);
             // 
             // LastLoginDateLbl0
             // 
@@ -564,17 +510,6 @@ namespace LogBookTask
             this.LastLoginDateLbl0.Size = new System.Drawing.Size(44, 23);
             this.LastLoginDateLbl0.TabIndex = 12;
             this.LastLoginDateLbl0.Text = "date";
-            // 
-            // UserImagePcBx0
-            // 
-            this.UserImagePcBx0.Image = global::LogBookTask.Properties.Resources.userImage1;
-            this.UserImagePcBx0.Location = new System.Drawing.Point(27, 6);
-            this.UserImagePcBx0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.UserImagePcBx0.Name = "UserImagePcBx0";
-            this.UserImagePcBx0.Size = new System.Drawing.Size(47, 42);
-            this.UserImagePcBx0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.UserImagePcBx0.TabIndex = 11;
-            this.UserImagePcBx0.TabStop = false;
             // 
             // UserFullnameLbl0
             // 
@@ -603,7 +538,7 @@ namespace LogBookTask
             this.StudentSeperatorPnl0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(86)))), ((int)(((byte)(127)))));
             this.StudentSeperatorPnl0.Location = new System.Drawing.Point(0, 0);
             this.StudentSeperatorPnl0.Name = "StudentSeperatorPnl0";
-            this.StudentSeperatorPnl0.Size = new System.Drawing.Size(1255, 1);
+            this.StudentSeperatorPnl0.Size = new System.Drawing.Size(1283, 1);
             this.StudentSeperatorPnl0.TabIndex = 8;
             // 
             // label7
@@ -616,25 +551,10 @@ namespace LogBookTask
             this.label7.TabIndex = 14;
             this.label7.Text = "Lesson Subject";
             // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2VScrollBar1.HoverState.Parent = null;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(1253, 144);
-            this.guna2VScrollBar1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.guna2VScrollBar1.MouseWheelBarPartitions = 10;
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.PressedState.Parent = this.guna2VScrollBar1;
-            this.guna2VScrollBar1.ScrollbarSize = 28;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(28, 406);
-            this.guna2VScrollBar1.TabIndex = 15;
-            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
-            // 
             // LessonSubjectTxtBx
             // 
             this.LessonSubjectTxtBx.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LessonSubjectTxtBx.DefaultText = "";
+            this.LessonSubjectTxtBx.DefaultText = "C# Garbiage Collector";
             this.LessonSubjectTxtBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.LessonSubjectTxtBx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.LessonSubjectTxtBx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -643,6 +563,7 @@ namespace LogBookTask
             this.LessonSubjectTxtBx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LessonSubjectTxtBx.FocusedState.Parent = this.LessonSubjectTxtBx;
             this.LessonSubjectTxtBx.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LessonSubjectTxtBx.ForeColor = System.Drawing.Color.Black;
             this.LessonSubjectTxtBx.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LessonSubjectTxtBx.HoverState.Parent = this.LessonSubjectTxtBx;
             this.LessonSubjectTxtBx.Location = new System.Drawing.Point(739, 45);
@@ -650,6 +571,7 @@ namespace LogBookTask
             this.LessonSubjectTxtBx.PasswordChar = '\0';
             this.LessonSubjectTxtBx.PlaceholderText = "";
             this.LessonSubjectTxtBx.SelectedText = "";
+            this.LessonSubjectTxtBx.SelectionStart = 21;
             this.LessonSubjectTxtBx.ShadowDecoration.Parent = this.LessonSubjectTxtBx;
             this.LessonSubjectTxtBx.Size = new System.Drawing.Size(253, 36);
             this.LessonSubjectTxtBx.TabIndex = 16;
@@ -672,6 +594,120 @@ namespace LogBookTask
             this.SaveLessonSubjectBtn.Size = new System.Drawing.Size(58, 34);
             this.SaveLessonSubjectBtn.TabIndex = 17;
             this.SaveLessonSubjectBtn.Text = "OK";
+            this.SaveLessonSubjectBtn.Click += new System.EventHandler(this.SaveLessonSubjectBtn_Click);
+            // 
+            // UsersPanel
+            // 
+            this.UsersPanel.AutoScroll = true;
+            this.UsersPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.UsersPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.UsersPanel.Enabled = false;
+            this.UsersPanel.Location = new System.Drawing.Point(0, 144);
+            this.UsersPanel.Name = "UsersPanel";
+            this.UsersPanel.Size = new System.Drawing.Size(1281, 406);
+            this.UsersPanel.TabIndex = 14;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = global::LogBookTask.Properties.Resources.userImage;
+            this.guna2CirclePictureBox1.InitialImage = null;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(79, -13);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(95, 84);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 16;
+            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBox1.UseTransparentBackground = true;
+            this.guna2CirclePictureBox1.Visible = false;
+            // 
+            // WriteCommentBtn0
+            // 
+            this.WriteCommentBtn0.Image = global::LogBookTask.Properties.Resources.comments_40px;
+            this.WriteCommentBtn0.Location = new System.Drawing.Point(1122, 7);
+            this.WriteCommentBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.WriteCommentBtn0.Name = "WriteCommentBtn0";
+            this.WriteCommentBtn0.Size = new System.Drawing.Size(44, 40);
+            this.WriteCommentBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.WriteCommentBtn0.TabIndex = 11;
+            this.WriteCommentBtn0.TabStop = false;
+            this.WriteCommentBtn0.Click += new System.EventHandler(this.WriteCommentBtn0_Click);
+            // 
+            // UserImagePcBx0
+            // 
+            this.UserImagePcBx0.Image = global::LogBookTask.Properties.Resources.userImage1;
+            this.UserImagePcBx0.Location = new System.Drawing.Point(27, 6);
+            this.UserImagePcBx0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UserImagePcBx0.Name = "UserImagePcBx0";
+            this.UserImagePcBx0.Size = new System.Drawing.Size(47, 42);
+            this.UserImagePcBx0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserImagePcBx0.TabIndex = 11;
+            this.UserImagePcBx0.TabStop = false;
+            this.UserImagePcBx0.MouseEnter += new System.EventHandler(this.UserImagePcBx0_MouseEnter);
+            this.UserImagePcBx0.MouseLeave += new System.EventHandler(this.UserImagePcBx0_MouseLeave);
+            // 
+            // ClearCrystallsBtn0
+            // 
+            this.ClearCrystallsBtn0.Image = global::LogBookTask.Properties.Resources.delete_32px;
+            this.ClearCrystallsBtn0.Location = new System.Drawing.Point(132, 4);
+            this.ClearCrystallsBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ClearCrystallsBtn0.Name = "ClearCrystallsBtn0";
+            this.ClearCrystallsBtn0.Size = new System.Drawing.Size(44, 40);
+            this.ClearCrystallsBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClearCrystallsBtn0.TabIndex = 10;
+            this.ClearCrystallsBtn0.TabStop = false;
+            this.ClearCrystallsBtn0.Click += new System.EventHandler(this.ClearCrystallsBtn0_Click);
+            // 
+            // ThreeCrystallBtn0
+            // 
+            this.ThreeCrystallBtn0.Image = ((System.Drawing.Image)(resources.GetObject("ThreeCrystallBtn0.Image")));
+            this.ThreeCrystallBtn0.InitialImage = ((System.Drawing.Image)(resources.GetObject("ThreeCrystallBtn0.InitialImage")));
+            this.ThreeCrystallBtn0.Location = new System.Drawing.Point(88, 4);
+            this.ThreeCrystallBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ThreeCrystallBtn0.Name = "ThreeCrystallBtn0";
+            this.ThreeCrystallBtn0.Size = new System.Drawing.Size(44, 40);
+            this.ThreeCrystallBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ThreeCrystallBtn0.TabIndex = 9;
+            this.ThreeCrystallBtn0.TabStop = false;
+            this.ThreeCrystallBtn0.Click += new System.EventHandler(this.ThreeCrystallBtn0_Click);
+            // 
+            // TwoCrystallBtn0
+            // 
+            this.TwoCrystallBtn0.Image = ((System.Drawing.Image)(resources.GetObject("TwoCrystallBtn0.Image")));
+            this.TwoCrystallBtn0.InitialImage = ((System.Drawing.Image)(resources.GetObject("TwoCrystallBtn0.InitialImage")));
+            this.TwoCrystallBtn0.Location = new System.Drawing.Point(44, 4);
+            this.TwoCrystallBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TwoCrystallBtn0.Name = "TwoCrystallBtn0";
+            this.TwoCrystallBtn0.Size = new System.Drawing.Size(44, 40);
+            this.TwoCrystallBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TwoCrystallBtn0.TabIndex = 8;
+            this.TwoCrystallBtn0.TabStop = false;
+            this.TwoCrystallBtn0.Click += new System.EventHandler(this.TwoCrystallBtn0_Click);
+            // 
+            // OneCrystallBtn0
+            // 
+            this.OneCrystallBtn0.Image = ((System.Drawing.Image)(resources.GetObject("OneCrystallBtn0.Image")));
+            this.OneCrystallBtn0.InitialImage = ((System.Drawing.Image)(resources.GetObject("OneCrystallBtn0.InitialImage")));
+            this.OneCrystallBtn0.Location = new System.Drawing.Point(0, 4);
+            this.OneCrystallBtn0.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.OneCrystallBtn0.Name = "OneCrystallBtn0";
+            this.OneCrystallBtn0.Size = new System.Drawing.Size(44, 40);
+            this.OneCrystallBtn0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.OneCrystallBtn0.TabIndex = 7;
+            this.OneCrystallBtn0.TabStop = false;
+            this.OneCrystallBtn0.Click += new System.EventHandler(this.OneCrystallBtn0_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LogBookTask.Properties.Resources.diamond_64px;
+            this.pictureBox1.Location = new System.Drawing.Point(935, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -680,13 +716,13 @@ namespace LogBookTask
             this.ClientSize = new System.Drawing.Size(1281, 550);
             this.Controls.Add(this.SaveLessonSubjectBtn);
             this.Controls.Add(this.LessonSubjectTxtBx);
-            this.Controls.Add(this.guna2VScrollBar1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.UserPanel0);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.TeacherCheckPanel);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.UsersPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
@@ -698,17 +734,18 @@ namespace LogBookTask
             this.panel1.ResumeLayout(false);
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.CrystallsPanel.ResumeLayout(false);
+            this.UserPanel0.ResumeLayout(false);
+            this.UserPanel0.PerformLayout();
+            this.RecordPanel0.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WriteCommentBtn0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserImagePcBx0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClearCrystallsBtn0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ThreeCrystallBtn0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TwoCrystallBtn0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OneCrystallBtn0)).EndInit();
-            this.UserPanel0.ResumeLayout(false);
-            this.UserPanel0.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WriteCommentBtn0)).EndInit();
-            this.RecordPanel0.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UserImagePcBx0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -718,11 +755,11 @@ namespace LogBookTask
 
         private System.Windows.Forms.Panel TeacherCheckPanel;
         private Guna.UI2.WinForms.Guna2RadioButton AnotherTeacherRdBtn;
-        private Guna.UI2.WinForms.Guna2RadioButton MainTeeacherRdBtn;
+        private Guna.UI2.WinForms.Guna2RadioButton MainTeacherRdBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label CrystalCountLbl;
+        private System.Windows.Forms.Label DiamondsCountLbl;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -752,9 +789,10 @@ namespace LogBookTask
         private Guna.UI2.WinForms.Guna2ComboBox ClassWorkCmBx0;
         private System.Windows.Forms.PictureBox WriteCommentBtn0;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
         private Guna.UI2.WinForms.Guna2TextBox LessonSubjectTxtBx;
         private Guna.UI2.WinForms.Guna2Button SaveLessonSubjectBtn;
+        private System.Windows.Forms.Panel UsersPanel;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }
 

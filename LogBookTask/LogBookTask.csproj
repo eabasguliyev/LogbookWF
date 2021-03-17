@@ -40,6 +40,9 @@
     <Reference Include="Guna.UI2, Version=2.0.1.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.1.4\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1-beta2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,14 +57,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\Human.cs" />
+    <Compile Include="CommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommentForm.Designer.cs">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DraggableForm.cs" />
     <Compile Include="Entities\Class.cs" />
     <Compile Include="Entities\Lesson.cs" />
-    <Compile Include="Entities\LogBook.cs" />
     <Compile Include="Entities\Student.cs" />
-    <Compile Include="Entities\Subject.cs" />
+    <Compile Include="Entities\StudentRecord.cs" />
     <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Enums\RecordType.cs" />
+    <Compile Include="Enums\TeacherType.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,9 +79,20 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Abstracts\Id.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\LogBookHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserPhoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPhoto.Designer.cs">
+      <DependentUpon>UserPhoto.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CommentForm.resx">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +106,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserPhoto.resx">
+      <DependentUpon>UserPhoto.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,6 +132,17 @@
     <None Include="Resources\userImage.png" />
     <None Include="Resources\xImage.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\diamond_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamond_64px-uncolor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comments_40px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
