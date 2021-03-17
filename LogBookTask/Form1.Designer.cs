@@ -29,6 +29,7 @@ namespace LogBookTask
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.TeacherCheckPanel = new System.Windows.Forms.Panel();
             this.AnotherTeacherRdBtn = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -69,7 +70,13 @@ namespace LogBookTask
             this.ThreeCrystallBtn0 = new System.Windows.Forms.PictureBox();
             this.TwoCrystallBtn0 = new System.Windows.Forms.PictureBox();
             this.OneCrystallBtn0 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SubjectSaveToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ProgramSaveToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.CommentToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ClearDiamondsToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.RecordToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TeacherCheckPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
@@ -83,6 +90,7 @@ namespace LogBookTask
             ((System.ComponentModel.ISupportInitialize)(this.ThreeCrystallBtn0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TwoCrystallBtn0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OneCrystallBtn0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,6 +148,7 @@ namespace LogBookTask
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(155)))), ((int)(((byte)(227)))));
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.guna2HtmlLabel1);
             this.panel1.Controls.Add(this.MinimizeBtn);
             this.panel1.Controls.Add(this.CloseBtn);
@@ -159,7 +168,7 @@ namespace LogBookTask
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(27, 5);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(57, 6);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(180, 34);
             this.guna2HtmlLabel1.TabIndex = 8;
@@ -458,6 +467,7 @@ namespace LogBookTask
             this.PermittedRdBtn0.UncheckedState.Parent = this.PermittedRdBtn0;
             this.PermittedRdBtn0.UseTransparentBackground = true;
             this.PermittedRdBtn0.CheckedChanged += new System.EventHandler(this.PermittedRdBtn0_CheckedChanged);
+            this.PermittedRdBtn0.MouseHover += new System.EventHandler(this.PermittedRdBtn0_MouseHover);
             // 
             // AttendedRdBtn0
             // 
@@ -479,6 +489,7 @@ namespace LogBookTask
             this.AttendedRdBtn0.UncheckedState.Parent = this.AttendedRdBtn0;
             this.AttendedRdBtn0.UseTransparentBackground = true;
             this.AttendedRdBtn0.CheckedChanged += new System.EventHandler(this.AttendedRdBtn0_CheckedChanged);
+            this.AttendedRdBtn0.MouseHover += new System.EventHandler(this.AttendedRdBtn0_MouseHover);
             // 
             // NotAttendedRdBtn0
             // 
@@ -500,6 +511,7 @@ namespace LogBookTask
             this.NotAttendedRdBtn0.UncheckedState.Parent = this.NotAttendedRdBtn0;
             this.NotAttendedRdBtn0.UseTransparentBackground = true;
             this.NotAttendedRdBtn0.CheckedChanged += new System.EventHandler(this.NotAttendedRdBtn0_CheckedChanged);
+            this.NotAttendedRdBtn0.MouseHover += new System.EventHandler(this.NotAttendedRdBtn0_MouseHover);
             // 
             // LastLoginDateLbl0
             // 
@@ -554,7 +566,7 @@ namespace LogBookTask
             // LessonSubjectTxtBx
             // 
             this.LessonSubjectTxtBx.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LessonSubjectTxtBx.DefaultText = "C# Garbiage Collector";
+            this.LessonSubjectTxtBx.DefaultText = "";
             this.LessonSubjectTxtBx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.LessonSubjectTxtBx.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.LessonSubjectTxtBx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -569,9 +581,8 @@ namespace LogBookTask
             this.LessonSubjectTxtBx.Location = new System.Drawing.Point(739, 45);
             this.LessonSubjectTxtBx.Name = "LessonSubjectTxtBx";
             this.LessonSubjectTxtBx.PasswordChar = '\0';
-            this.LessonSubjectTxtBx.PlaceholderText = "";
+            this.LessonSubjectTxtBx.PlaceholderText = "Write subject";
             this.LessonSubjectTxtBx.SelectedText = "";
-            this.LessonSubjectTxtBx.SelectionStart = 21;
             this.LessonSubjectTxtBx.ShadowDecoration.Parent = this.LessonSubjectTxtBx;
             this.LessonSubjectTxtBx.Size = new System.Drawing.Size(253, 36);
             this.LessonSubjectTxtBx.TabIndex = 16;
@@ -633,6 +644,7 @@ namespace LogBookTask
             this.WriteCommentBtn0.TabIndex = 11;
             this.WriteCommentBtn0.TabStop = false;
             this.WriteCommentBtn0.Click += new System.EventHandler(this.WriteCommentBtn0_Click);
+            this.WriteCommentBtn0.MouseHover += new System.EventHandler(this.WriteCommentBtn0_MouseHover);
             // 
             // UserImagePcBx0
             // 
@@ -658,6 +670,7 @@ namespace LogBookTask
             this.ClearCrystallsBtn0.TabIndex = 10;
             this.ClearCrystallsBtn0.TabStop = false;
             this.ClearCrystallsBtn0.Click += new System.EventHandler(this.ClearCrystallsBtn0_Click);
+            this.ClearCrystallsBtn0.MouseHover += new System.EventHandler(this.ClearCrystallsBtn0_MouseHover);
             // 
             // ThreeCrystallBtn0
             // 
@@ -697,6 +710,16 @@ namespace LogBookTask
             this.OneCrystallBtn0.TabIndex = 7;
             this.OneCrystallBtn0.TabStop = false;
             this.OneCrystallBtn0.Click += new System.EventHandler(this.OneCrystallBtn0_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::LogBookTask.Properties.Resources.logbook_48px;
+            this.pictureBox2.Location = new System.Drawing.Point(14, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -745,6 +768,7 @@ namespace LogBookTask
             ((System.ComponentModel.ISupportInitialize)(this.ThreeCrystallBtn0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TwoCrystallBtn0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OneCrystallBtn0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -793,6 +817,12 @@ namespace LogBookTask
         private Guna.UI2.WinForms.Guna2Button SaveLessonSubjectBtn;
         private System.Windows.Forms.Panel UsersPanel;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolTip SubjectSaveToolTip;
+        private System.Windows.Forms.ToolTip ProgramSaveToolTip;
+        private System.Windows.Forms.ToolTip CommentToolTip;
+        private System.Windows.Forms.ToolTip ClearDiamondsToolTip;
+        private System.Windows.Forms.ToolTip RecordToolTip;
     }
 }
 

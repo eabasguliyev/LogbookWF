@@ -29,6 +29,11 @@ namespace LogBookTask
         {
             InitializeComponent();
 
+            UserPanel0.Dispose();
+            UserImagePcBx0.Dispose();
+
+            SubjectSaveToolTip.SetToolTip(SaveLessonSubjectBtn, "Save the subject of lesson");
+            ProgramSaveToolTip.SetToolTip(SaveBtn, "Save data in json file");
             var fileName = "FSDA_3914_az.json";
 
 
@@ -117,7 +122,9 @@ namespace LogBookTask
 
         private void CloseBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(MessageBox.Show("Are you sure to exit? If you exit, the information you have not saved will be lost.",
+                "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) 
+                Application.Exit();
         }
 
         private void MinimizeBtn_MouseLeave(object sender, EventArgs e)
@@ -282,6 +289,7 @@ namespace LogBookTask
             newAttendedRdBtn.Name = $"AttendedRdBtn{studentNo}";
             newAttendedRdBtn.Tag = studentNo;
             newAttendedRdBtn.CheckedChanged += AttendedRdBtn0_CheckedChanged;
+            newAttendedRdBtn.MouseHover += AttendedRdBtn0_MouseHover;
 
             newRecordPanel.Controls.Add(newAttendedRdBtn);
 
@@ -295,6 +303,7 @@ namespace LogBookTask
             newNotAttendedRdBtn.Name = $"NotAttendedRdBtn{studentNo}";
             newNotAttendedRdBtn.Tag = studentNo;
             newNotAttendedRdBtn.CheckedChanged += NotAttendedRdBtn0_CheckedChanged;
+            newNotAttendedRdBtn.MouseHover += NotAttendedRdBtn0_MouseHover;
 
             newRecordPanel.Controls.Add(newNotAttendedRdBtn);
 
@@ -308,6 +317,7 @@ namespace LogBookTask
             newPermittedRdBtn.Name = $"PermittedRdBtn{studentNo}";
             newPermittedRdBtn.Tag = studentNo;
             newPermittedRdBtn.CheckedChanged += PermittedRdBtn0_CheckedChanged;
+            newPermittedRdBtn.MouseHover += PermittedRdBtn0_MouseHover;
 
             newRecordPanel.Controls.Add(newPermittedRdBtn);
 
@@ -408,6 +418,7 @@ namespace LogBookTask
             newClearCrystallsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             newClearCrystallsBtn.Tag = studentNo;
             newClearCrystallsBtn.Click += ClearCrystallsBtn0_Click;
+            newClearCrystallsBtn.MouseHover += ClearCrystallsBtn0_MouseHover;
             newCrystallsPanel.Controls.Add(newClearCrystallsBtn);
 
             var newWriteCommentBtn = new PictureBox();
@@ -418,6 +429,7 @@ namespace LogBookTask
             newWriteCommentBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             newWriteCommentBtn.Tag = studentNo;
             newWriteCommentBtn.Click += WriteCommentBtn0_Click;
+            newWriteCommentBtn.MouseHover += WriteCommentBtn0_MouseHover;
 
             newUserPanel.Controls.Add(newWriteCommentBtn);
 
@@ -530,6 +542,8 @@ namespace LogBookTask
 
             _class.Subjects[DateTime.Now.ToShortDateString()] = LessonSubjectTxtBx.Text;
             _lesson.Subject = LessonSubjectTxtBx.Text;
+
+            MessageBox.Show("Subject saved", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void MainTeacherRdBtn_CheckedChanged(object sender, EventArgs e)
@@ -556,6 +570,7 @@ namespace LogBookTask
         {
             FileHelper.WriteToJson(_fileName, _lesson);
             FileHelper.WriteClassToJson($"{_class.ClassName}.json", _class);
+            MessageBox.Show("Date saved to file.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void OneCrystallBtn0_Click(object sender, EventArgs e)
@@ -719,9 +734,44 @@ namespace LogBookTask
             if (commentForm.ShowDialog() == DialogResult.OK)
             {
                 _class.Students[userNo].Comments[DateTime.Now.ToShortDateString()] = commentForm.Comment;
+
+                MessageBox.Show("Comment added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            MessageBox.Show("Comment added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ClearCrystallsBtn0_MouseHover(object sender, EventArgs e)
+        {
+            var pcBx = sender as PictureBox;
+            ClearDiamondsToolTip.SetToolTip(pcBx, "Clear diamonds of Student");
+        }
+
+        private void WriteCommentBtn0_MouseHover(object sender, EventArgs e)
+        {
+            var pcBx = sender as PictureBox;
+
+            CommentToolTip.SetToolTip(pcBx, "Send comment to Student");
+        }
+
+        private void AttendedRdBtn0_MouseHover(object sender, EventArgs e)
+        {
+            var rdBtn = sender as Guna2CustomRadioButton;
+
+            RecordToolTip.SetToolTip(rdBtn, "Student is attended");
+        }
+
+        private void PermittedRdBtn0_MouseHover(object sender, EventArgs e)
+        {
+            var rdBtn = sender as Guna2CustomRadioButton;
+
+            RecordToolTip.SetToolTip(rdBtn, "Student is permitted");
+        }
+
+        private void NotAttendedRdBtn0_MouseHover(object sender, EventArgs e)
+        {
+            var rdBtn = sender as Guna2CustomRadioButton;
+
+            RecordToolTip.SetToolTip(rdBtn, "Student is not attended");
         }
     }
 }

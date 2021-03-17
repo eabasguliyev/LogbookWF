@@ -123,6 +123,16 @@ namespace LogBookTask.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logbook_48px {
+            get {
+                object obj = ResourceManager.GetObject("logbook_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap userImage {
             get {
                 object obj = ResourceManager.GetObject("userImage", resourceCulture);
