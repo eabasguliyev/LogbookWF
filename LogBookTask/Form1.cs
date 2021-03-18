@@ -25,6 +25,7 @@ namespace LogBookTask
         private string _fileName;
 
         private UserPhoto _userPhoto;
+        private bool _newLesson = false;
         public Form1()
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace LogBookTask
                     Students = LogBookHelper.GetStudents(),
                     Teachers = LogBookHelper.GetTeachers(),
                 };
+                newClass.Lessons.Add("C# programming language");
 
                 _class = newClass;
             }
@@ -73,7 +75,7 @@ namespace LogBookTask
             if (_lesson == null)
             {
                 _lesson = new Lesson() { Date = DateTime.Now };
-
+                _newLesson = true;
                 foreach (var student in _class.Students)
                 {
                     var newStudentRecord = new StudentRecord();
@@ -209,7 +211,7 @@ namespace LogBookTask
             newUserPanel.BackColor = Color.FromArgb(235, 249, 255);
             newUserPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                 | System.Windows.Forms.AnchorStyles.Right)));
-            newUserPanel.Size = new Size(940, 45);
+            newUserPanel.Size = new Size(960, 45);
             newUserPanel.Location = new Point(0, studentNo * newUserPanel.Size.Height);
             newUserPanel.Name = $"UserPanel{studentNo}";
             newUserPanel.Tag = studentNo;
@@ -218,7 +220,7 @@ namespace LogBookTask
 
             var newStudentSeperatorPnl = new Panel();
             newStudentSeperatorPnl.BackColor = Color.FromArgb(16, 86, 127);
-            newStudentSeperatorPnl.Size = new Size(941, 1);
+            newStudentSeperatorPnl.Size = new Size(960, 1);
             newStudentSeperatorPnl.Location = new Point(0, 0);
             newStudentSeperatorPnl.Name = $"StudentSeperatorPnl{studentNo}";
             newStudentSeperatorPnl.Tag = studentNo;
@@ -456,6 +458,7 @@ namespace LogBookTask
                 LessonSubjectTxtBx.Text = _lesson.Subject;
             }
 
+            GroupNameLbl.Text = $"{_class.ClassName} - {_class.Lessons[0]}";
             DiamondsCountLbl.Text = _lesson.TotalDiamondCount.ToString();
             FillStudentsToUserPanels(_lesson.StudentRecords);
 
@@ -553,6 +556,16 @@ namespace LogBookTask
                 _lesson.TeacherType = TeacherType.MainTeacher;
                 _lesson.Teacher = _class.Teachers[0];
                 UsersPanel.Enabled = true;
+
+                if (_newLesson)
+                {
+                    for (int i = 0; i < this.UsersPanel.Controls.Count; i++)
+                    {
+                        var userPanel = this.UsersPanel.Controls[$"UserPanel{i}"] as Panel;
+
+                        ChangeUserActivity(userPanel.Controls, i, false);
+                    }
+                }
             }
         }
 

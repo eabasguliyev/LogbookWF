@@ -77,6 +77,7 @@ namespace LogBookTask
             this.CommentToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.ClearDiamondsToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.RecordToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.GroupNameLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.TeacherCheckPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
@@ -98,7 +99,7 @@ namespace LogBookTask
             // 
             this.TeacherCheckPanel.Controls.Add(this.AnotherTeacherRdBtn);
             this.TeacherCheckPanel.Controls.Add(this.MainTeacherRdBtn);
-            this.TeacherCheckPanel.Location = new System.Drawing.Point(5, 45);
+            this.TeacherCheckPanel.Location = new System.Drawing.Point(5, 88);
             this.TeacherCheckPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TeacherCheckPanel.Name = "TeacherCheckPanel";
             this.TeacherCheckPanel.Size = new System.Drawing.Size(264, 36);
@@ -231,7 +232,7 @@ namespace LogBookTask
             this.HeaderPanel.Controls.Add(this.label3);
             this.HeaderPanel.Controls.Add(this.label2);
             this.HeaderPanel.Controls.Add(this.label1);
-            this.HeaderPanel.Location = new System.Drawing.Point(0, 87);
+            this.HeaderPanel.Location = new System.Drawing.Point(0, 133);
             this.HeaderPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(1281, 57);
@@ -324,7 +325,7 @@ namespace LogBookTask
             this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
             this.SaveBtn.HoverState.Parent = this.SaveBtn;
-            this.SaveBtn.Location = new System.Drawing.Point(1177, 47);
+            this.SaveBtn.Location = new System.Drawing.Point(1167, 88);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.ShadowDecoration.Parent = this.SaveBtn;
@@ -360,7 +361,7 @@ namespace LogBookTask
             this.UserPanel0.Controls.Add(this.NoLbl);
             this.UserPanel0.Controls.Add(this.CrystallsPanel);
             this.UserPanel0.Controls.Add(this.StudentSeperatorPnl0);
-            this.UserPanel0.Location = new System.Drawing.Point(0, 144);
+            this.UserPanel0.Location = new System.Drawing.Point(0, 190);
             this.UserPanel0.Name = "UserPanel0";
             this.UserPanel0.Size = new System.Drawing.Size(1281, 55);
             this.UserPanel0.TabIndex = 7;
@@ -557,7 +558,7 @@ namespace LogBookTask
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(605, 52);
+            this.label7.Location = new System.Drawing.Point(595, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 23);
             this.label7.TabIndex = 14;
@@ -578,7 +579,7 @@ namespace LogBookTask
             this.LessonSubjectTxtBx.ForeColor = System.Drawing.Color.Black;
             this.LessonSubjectTxtBx.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LessonSubjectTxtBx.HoverState.Parent = this.LessonSubjectTxtBx;
-            this.LessonSubjectTxtBx.Location = new System.Drawing.Point(739, 45);
+            this.LessonSubjectTxtBx.Location = new System.Drawing.Point(729, 86);
             this.LessonSubjectTxtBx.Name = "LessonSubjectTxtBx";
             this.LessonSubjectTxtBx.PasswordChar = '\0';
             this.LessonSubjectTxtBx.PlaceholderText = "Write subject";
@@ -598,7 +599,7 @@ namespace LogBookTask
             this.SaveLessonSubjectBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SaveLessonSubjectBtn.ForeColor = System.Drawing.Color.White;
             this.SaveLessonSubjectBtn.HoverState.Parent = this.SaveLessonSubjectBtn;
-            this.SaveLessonSubjectBtn.Location = new System.Drawing.Point(998, 46);
+            this.SaveLessonSubjectBtn.Location = new System.Drawing.Point(988, 87);
             this.SaveLessonSubjectBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SaveLessonSubjectBtn.Name = "SaveLessonSubjectBtn";
             this.SaveLessonSubjectBtn.ShadowDecoration.Parent = this.SaveLessonSubjectBtn;
@@ -613,9 +614,9 @@ namespace LogBookTask
             this.UsersPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.UsersPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.UsersPanel.Enabled = false;
-            this.UsersPanel.Location = new System.Drawing.Point(0, 144);
+            this.UsersPanel.Location = new System.Drawing.Point(0, 189);
             this.UsersPanel.Name = "UsersPanel";
-            this.UsersPanel.Size = new System.Drawing.Size(1281, 406);
+            this.UsersPanel.Size = new System.Drawing.Size(1281, 475);
             this.UsersPanel.TabIndex = 14;
             // 
             // guna2CirclePictureBox1
@@ -732,11 +733,23 @@ namespace LogBookTask
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // GroupNameLbl
+            // 
+            this.GroupNameLbl.AutoSize = false;
+            this.GroupNameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.GroupNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.GroupNameLbl.Location = new System.Drawing.Point(10, 46);
+            this.GroupNameLbl.Name = "GroupNameLbl";
+            this.GroupNameLbl.Size = new System.Drawing.Size(913, 38);
+            this.GroupNameLbl.TabIndex = 18;
+            this.GroupNameLbl.Text = "Group and lesson Name";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1281, 550);
+            this.ClientSize = new System.Drawing.Size(1281, 664);
+            this.Controls.Add(this.GroupNameLbl);
             this.Controls.Add(this.SaveLessonSubjectBtn);
             this.Controls.Add(this.LessonSubjectTxtBx);
             this.Controls.Add(this.label7);
@@ -823,6 +836,7 @@ namespace LogBookTask
         private System.Windows.Forms.ToolTip CommentToolTip;
         private System.Windows.Forms.ToolTip ClearDiamondsToolTip;
         private System.Windows.Forms.ToolTip RecordToolTip;
+        private Guna.UI2.WinForms.Guna2HtmlLabel GroupNameLbl;
     }
 }
 

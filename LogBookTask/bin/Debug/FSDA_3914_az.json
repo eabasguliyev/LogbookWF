@@ -11,7 +11,7 @@
       "LastName": "Camalzade",
       "FatherName": "",
       "BirthDate": "1999-01-01T00:00:00",
-      "Guid": "ef993228-b666-437f-8754-ce879814757c"
+      "Guid": "e17acfc4-a4b4-46e4-ba7e-0841354e11af"
     },
     {
       "Username": "agil_ma",
@@ -23,21 +23,19 @@
       "LastName": "Mammadzada",
       "FatherName": "",
       "BirthDate": "1988-01-01T00:00:00",
-      "Guid": "5acf6cf1-6694-4196-897f-357e1fc6601e"
+      "Guid": "e764edb2-e918-4f16-93a3-338fbe33ba04"
     }
   ],
   "Students": [
     {
-      "Records": {},
-      "AssignmentPoints": {
-        "3/18/2021": 12
+      "Records": {
+        "3/18/2021": 1
       },
+      "AssignmentPoints": {},
       "ClassWorkPoints": {},
-      "Diamonds": 3,
+      "Diamonds": 5,
       "Coins": 0,
-      "Comments": {
-        "3/18/2021": "telebe yaxshi oxuyur"
-      },
+      "Comments": {},
       "Username": "resul_os",
       "Password": "resul2001",
       "Email": "resul.osmanli@gmail.com",
@@ -47,19 +45,17 @@
       "LastName": "Osmanli",
       "FatherName": "Ferhad",
       "BirthDate": "2001-01-01T00:00:00",
-      "Guid": "f6cbb1aa-71e6-4b89-949b-a16cdcf592f0"
+      "Guid": "18a86cfa-6985-45ce-807a-c0d7de93a496"
     },
     {
-      "Records": {},
-      "AssignmentPoints": {
-        "3/18/2021": 12
+      "Records": {
+        "3/18/2021": 1
       },
+      "AssignmentPoints": {},
       "ClassWorkPoints": {},
-      "Diamonds": 2,
+      "Diamonds": 3,
       "Coins": 0,
-      "Comments": {
-        "3/18/2021": "bele davam ele"
-      },
+      "Comments": {},
       "Username": "elgun_ab",
       "Password": "elgun2000",
       "Email": "elgun.abasquliyev@gmail.com",
@@ -69,21 +65,19 @@
       "LastName": "Abasquliyev",
       "FatherName": "Fiday",
       "BirthDate": "2001-01-01T00:00:00",
-      "Guid": "1022e49a-9130-4f8c-a0d4-e03ea5f692ec"
+      "Guid": "8a22a8c8-d0c2-42b6-b86c-1ce34d5cb1b6"
     },
     {
-      "Records": {},
-      "AssignmentPoints": {
-        "3/18/2021": 8
+      "Records": {
+        "3/18/2021": 1
       },
-      "ClassWorkPoints": {
+      "AssignmentPoints": {
         "3/18/2021": 12
       },
+      "ClassWorkPoints": {},
       "Diamonds": 1,
       "Coins": 0,
-      "Comments": {
-        "3/18/2021": "bele davam ele"
-      },
+      "Comments": {},
       "Username": "arifali_ba",
       "Password": "arifali2003",
       "Email": "arifali.bagirli@gmail.com",
@@ -93,17 +87,17 @@
       "LastName": "Bagirli",
       "FatherName": "Azad",
       "BirthDate": "2001-01-01T00:00:00",
-      "Guid": "76a833f1-f5ec-4f36-a83c-2c2792950e2c"
+      "Guid": "d3005f16-28e1-47f1-82c0-eda38dfea562"
     },
     {
-      "Records": {},
+      "Records": {
+        "3/18/2021": 1
+      },
       "AssignmentPoints": {},
       "ClassWorkPoints": {},
-      "Diamonds": 6,
+      "Diamonds": 1,
       "Coins": 0,
-      "Comments": {
-        "3/18/2021": "telebe yaxshi oxuyur, bele davam etsin!"
-      },
+      "Comments": {},
       "Username": "zaur_ce",
       "Password": "zaur2003",
       "Email": "zaur.ceferov@gmail.com",
@@ -113,11 +107,14 @@
       "LastName": "Ceferov",
       "FatherName": "Ceyhun",
       "BirthDate": "2001-01-01T00:00:00",
-      "Guid": "58161f92-b981-45ec-b897-5d272d52f52e"
+      "Guid": "bc7b763c-3324-40fc-a9de-4ed0ae374aee"
     }
   ],
   "Subjects": {
-    "3/18/2021": "C# winform"
+    "3/18/2021": "Hello world"
   },
-  "Guid": "85e3b496-c83f-48d3-8ea6-1704f189eef1"
+  "Lessons": [
+    "C# programming language"
+  ],
+  "Guid": "ea038299-ad34-4472-987c-07c3ae738572"
 }

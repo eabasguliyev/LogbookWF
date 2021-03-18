@@ -10,11 +10,13 @@ namespace LogBookTask.Entities
         public List<Student> Students { get; set; }
         public Dictionary<string, string> Subjects { get; set; }
 
+        public List<string> Lessons { get; set; }
         public Class()
         {
             Teachers = new List<Teacher>();
             Students = new List<Student>();
             Subjects = new Dictionary<string, string>();
+            Lessons = new List<string>();
         }
     }
 }
