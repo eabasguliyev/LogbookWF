@@ -50,7 +50,6 @@ namespace LogBookTask.Helpers
                     Email = "resul.osmanli@gmail.com",
                     BirthDate = new DateTime(2001, 1, 1),
                     UserLastLogin = "15.03.21",
-                    UserImage = Image.FromFile(@"C:\Users\elgun\Downloads\dog.png"),
                 },
                 new Student()
                 {
@@ -62,7 +61,6 @@ namespace LogBookTask.Helpers
                     Email = "elgun.abasquliyev@gmail.com",
                     BirthDate = new DateTime(2001, 1, 1),
                     UserLastLogin = "15.03.21",
-                    UserImage = Image.FromFile(@"C:\Users\elgun\Downloads\cat.png")
                 },
                 new Student()
                 {
@@ -74,7 +72,6 @@ namespace LogBookTask.Helpers
                     Email = "arifali.bagirli@gmail.com",
                     BirthDate = new DateTime(2001, 1, 1),
                     UserLastLogin = "15.03.21",
-                    UserImage = Image.FromFile(@"C:\Users\elgun\Downloads\cockatiel.png")
                 },
                 new Student()
                 {
@@ -86,7 +83,6 @@ namespace LogBookTask.Helpers
                     Email = "zaur.ceferov@gmail.com",
                     BirthDate = new DateTime(2001, 1, 1),
                     UserLastLogin = "15.03.21",
-                    UserImage = Image.FromFile(@"C:\Users\elgun\Downloads\hamster.png")
                 },
             };
 
