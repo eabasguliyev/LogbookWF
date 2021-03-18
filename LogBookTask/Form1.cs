@@ -330,6 +330,7 @@ namespace LogBookTask
             newAssignmentCmBx.Location = new Point(460, 5);
             newAssignmentCmBx.Size = new Size(68, 20);
             newAssignmentCmBx.Tag = studentNo;
+            newAssignmentCmBx.AutoRoundedCorners = true;
             newAssignmentCmBx.Items.AddRange(new [] {
                 "-",
                 "12",
@@ -354,6 +355,7 @@ namespace LogBookTask
             newClassWorkCmBx.Location = new Point(554, 5);
             newClassWorkCmBx.Size = new Size(68, 31);
             newClassWorkCmBx.Tag = studentNo;
+            newClassWorkCmBx.AutoRoundedCorners = true;
             newClassWorkCmBx.Items.AddRange(new[] {
                 "-",
                 "12",

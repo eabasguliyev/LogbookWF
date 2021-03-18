@@ -369,8 +369,10 @@ namespace LogBookTask
             // 
             // ClassWorkCmBx0
             // 
+            this.ClassWorkCmBx0.AutoRoundedCorners = true;
             this.ClassWorkCmBx0.BackColor = System.Drawing.Color.Transparent;
             this.ClassWorkCmBx0.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(255)))), ((int)(((byte)(31)))));
+            this.ClassWorkCmBx0.BorderRadius = 14;
             this.ClassWorkCmBx0.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.ClassWorkCmBx0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClassWorkCmBx0.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -404,8 +406,10 @@ namespace LogBookTask
             // 
             // AssignmentCmBx0
             // 
+            this.AssignmentCmBx0.AutoRoundedCorners = true;
             this.AssignmentCmBx0.BackColor = System.Drawing.Color.Transparent;
             this.AssignmentCmBx0.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(245)))));
+            this.AssignmentCmBx0.BorderRadius = 14;
             this.AssignmentCmBx0.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.AssignmentCmBx0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AssignmentCmBx0.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
